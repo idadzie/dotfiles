@@ -1,0 +1,12 @@
+# Register syntaxes
+--map-syntax .babelrc:json
+--map-syntax conf:ini
+--map-syntax config:ini
+--map-syntax h:cpp
+--map-syntax ignore:.gitignore
+--map-syntax .ignore:.gitignore
+--map-syntax .fdignore:.gitignore
+--map-syntax .gitconfig.local:.gitconfig
+--map-syntax .zshrc.local:.zshrc
+--map-syntax .zshenv.local:.zshrc
+--map-syntax .local:.zshrc
