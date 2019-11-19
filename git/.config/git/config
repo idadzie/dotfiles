@@ -1,0 +1,37 @@
+[core]
+    editor = $EDITOR
+    quotepath = false
+    pager = diff-so-fancy | less --tabs=4 -RFXi
+[merge]
+    tool = meld
+[mergetool "meld"]
+    trustExitCode = false
+    hasOutput = true
+[push]
+    default = simple
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[commit]
+    template = ~/.config/git/template
+[include]
+    path = ~/.config/git/local
+[color]
+    ui = true
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+[color "diff"]
+    meta = yellow
+    frag = magenta bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[diff-so-fancy]
+    markEmptyLines = false
+[ghq]
+    root = ~/code/src
