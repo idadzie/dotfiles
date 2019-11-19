@@ -1,0 +1,67 @@
+directory: ~/Music
+
+threaded: yes
+
+import:
+  copy: no
+  move: yes
+
+per_disc_numbering: yes
+
+item_fields:
+  disc_and_track: u'%02i.%02i' % (disc, track) if
+                  disctotal > 1 else u'%02i' % (track)
+
+match:
+  preferred:
+    countries: ['US', 'GB|UK']
+    media: ['CD', 'Digital Media|File']
+
+paths:
+  default: $albumartist/$album ($year)/$disc_and_track $title
+  singleton: _singles/$artist/$title
+
+embedart:
+  remove_art_file: no
+  maxwidth: 1000
+
+fetchart:
+  enforce_ratio: yes
+  minwidth: 1000
+  maxwidth: 1000
+  sources: filesystem coverart fanarttv itunes *
+  store_source: yes
+
+zero:
+  fields: comments bpm arranger
+  update_database: true
+
+ftintitle:
+  auto: yes
+  format: (feat. {0})
+
+# duplicates:
+#   checksum: no  # expensive
+
+bandcamp:
+  lyrics: yes
+  art: yes
+  split_artist_title: no
+
+asciify_paths: yes
+
+plugins:
+  - acousticbrainz
+  - bandcamp
+  - deezer
+  - edit
+  - embedart
+  - fetchart
+  - fromfilename
+  - ftintitle
+  - inline
+  - lyrics
+  - mbsync
+  - missing
+  - scrub
+  - zero
