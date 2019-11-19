@@ -1,0 +1,7 @@
+# Clone a list repositories from a file with ghq.
+
+if (( ! $+commands[ghq] )); then
+  echo 'Install ghq to use this.' && return 0
+fi
+
+ghq import -u -p < "$@"

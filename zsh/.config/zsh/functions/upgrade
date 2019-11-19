@@ -1,0 +1,9 @@
+# Upgrade debian based ditributions.
+
+(( $+commands[apt] )) || return 0
+
+if (( $+commands[apt-fast] )); then
+  sudo apt-fast update && sudo apt-fast upgrade -y
+else
+  sudo apt update && sudo apt upgrade -y
+fi

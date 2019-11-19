@@ -1,0 +1,5 @@
+# Update repositories of debian based distributions.
+
+(( $+commands[apt] )) || return 0
+
+sudo apt update && apt list --upgradable -a

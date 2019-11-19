@@ -1,0 +1,29 @@
+# Join tar part files.
+
+stitch() {
+  command cat "$1:r:r".tar.* | tar xvf -
+}
+
+self=$0
+usage() {
+  command cat << HELP
+Usage: $self [OPTION] [FILE]
+
+Join tar part files from the base tar file i.e. FILE.00*.
+
+Option:
+  -a, --all  Join all base tar files in current directory
+HELP
+}
+
+if [[ $# -ne 1 ]]; then
+  usage
+else
+  if [[ "$1" == "-a" ]] || [[ "$1" == "--all" ]]; then
+    for f in *.tar.0000; do
+      stitch "${f%%.*}"
+    done
+  else
+    stitch $1
+  fi
+fi

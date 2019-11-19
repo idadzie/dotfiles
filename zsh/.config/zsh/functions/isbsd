@@ -1,0 +1,8 @@
+# Returns true if running OS is FreeBSD.
+
+osdetect
+if [[ "$PLATFORM" == 'bsd' ]]; then
+  return 0
+else
+  return 1
+fi

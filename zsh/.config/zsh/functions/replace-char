@@ -1,0 +1,7 @@
+# Replace characters in filenames.
+
+if (( ! $+commands[rnm] )); then
+  echo 'Install rnm to use this.' && return 0
+fi
+
+rnm -rs '/'$1'/'$2'/' ./*
