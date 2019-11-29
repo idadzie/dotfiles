@@ -18,7 +18,7 @@ export LESSCHARSET='utf-8'
 # Poetry
 export PATH="$HOME/.poetry/bin:$PATH"
 
-# Pipx
+# Local binaries
 export PATH="$HOME/.local/bin:$PATH"
 
 # Yarn
