@@ -1,40 +1,40 @@
 #
-# Zplugin, plugins & snippets
+# Zinit, plugins & snippets
 #
 
-typeset -A ZPLGM
-ZPLG_HOME=$HOME/.local/zplugin
-ZPLGM[HOME_DIR]=$ZPLG_HOME
-ZPLGM[ZCOMPDUMP_PATH]=$XDG_CACHE_HOME/zsh/compdump
+typeset -A ZINIT
+ZINIT_HOME=$HOME/.local/zinit
+ZINIT[HOME_DIR]=$ZINIT_HOME
+ZINIT[ZCOMPDUMP_PATH]=$XDG_CACHE_HOME/zsh/compdump
 
-if [[ ! -f $ZPLG_HOME/bin/zplugin.zsh ]]; then
-  git clone https://github.com/zdharma/zplugin.git $ZPLG_HOME/bin
-  zcompile $ZPLG_HOME/bin/zplugin.zsh
+if [[ ! -f $ZINIT_HOME/bin/zinit.zsh ]]; then
+  git clone https://github.com/zdharma/zinit.git $ZINIT_HOME/bin
+  zcompile $ZINIT_HOME/bin/zinit.zsh
 fi
 
-source $ZPLG_HOME/bin/zplugin.zsh
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
+source $ZINIT_HOME/bin/zinit.zsh
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
 autoload -Uz compinit
 compinit -u -d "$XDG_CACHE_HOME/zsh/compdump"
 
-# Zplugin annex
-zplugin light-mode for zplugin/z-a-bin-gem-node
+# Zinit extensions
+zinit light-mode for zinit-zsh/z-a-bin-gem-node
 
 # Commands
-zplugin light rupa/z
+zinit light rupa/z
 
-zplugin ice as'program' pick"$ZPFX/bin/git-*" \
+zinit ice as'program' pick"$ZPFX/bin/git-*" \
   make"PREFIX=$ZPFX" src'etc/git-extras-completion.zsh'
-zplugin light tj/git-extras
+zinit light tj/git-extras
 
-# Zplugin does not provide a straight forward way to
+# Zinit does not provide a straight forward way to
 # install accompanying man pages. Hence the mess/"genius" below.
 # At least this way I won't forget to install the completion
 # files, have to go back to the repo and manually add to FPATH
 # on a new PC.
-zplugin from'gh-r' lucid for \
+zinit from'gh-r' lucid for \
   sbin'bin/hub' \
   atclone'mv hub*/* .;
     rm -rf *~*backup(/^F) (#i)install;
@@ -42,11 +42,11 @@ zplugin from'gh-r' lucid for \
     cp share/man/*/*.1 $ZPFX/share/man/man1' \
   atpull'%atclone' github/hub
 
-zplugin as'null' wait lucid light-mode for \
+zinit as'null' wait lucid light-mode for \
   sbin"bin/git-dsf;bin/diff-so-fancy" zdharma/zsh-diff-so-fancy \
   sbin'emojify;fuzzy-emoji' src'fuzzy-emoji-zle.zsh' wfxr/emoji-cli
 
-zplugin as'null' from'gh-r' lucid for \
+zinit as'null' from'gh-r' lucid for \
   mv"exa* -> exa" sbin ogham/exa \
   mv'docker* -> docker-compose' sbin docker/compose \
   mv'jq* -> jq' sbin stedolan/jq \
@@ -56,7 +56,7 @@ zplugin as'null' from'gh-r' lucid for \
   bpick'*amd64.tgz' sbin cjbassi/gotop \
   sbin junegunn/fzf-bin
 
-zplugin from'gh-r' lucid for \
+zinit from'gh-r' lucid for \
   mv'ghq* -> ghq' sbin'ghq/ghq' motemen/ghq \
   mv'pastel* -> pastel' sbin'pastel/pastel' @sharkdp/pastel \
   mv'fd* -> fd' sbin'fd/fd' \
@@ -64,17 +64,17 @@ zplugin from'gh-r' lucid for \
   mv'bat* -> bat' sbin'bat/bat' \
     atclone'cp **/*.1 $ZPFX/share/man/man1' atpull'%atclone' @sharkdp/bat
 
-zplugin wait lucid for \
+zinit wait lucid for \
   wfxr/forgit \
   sbin'bin/anyenv' \
-    atload'export ANYENV_ROOT=$HOME/.anyenv; eval "$(anyenv init -)"' anyenv/anyenv
+    atload'export ANYENV_ROOT=$HOME/.local/anyenv; eval "$(anyenv init -)"' anyenv/anyenv
 
-# zplugin wait lucid sbin'bin/anyenv' \
+# zinit wait lucid sbin'bin/anyenv' \
 #   atload'export ANYENV_ROOT=$HOME/.anyenv; eval "$(anyenv init -)"'
-# zplugin light anyenv/anyenv
+# zinit light anyenv/anyenv
 
 # Plugins
-zplugin light MichaelAquilina/zsh-you-should-use
+zinit light MichaelAquilina/zsh-you-should-use
 
 local omz_plugins
 omz_plugins=(
@@ -85,25 +85,25 @@ omz_plugins=(
   plugins/magic-enter/magic-enter.plugin.zsh
   themes/fishy.zsh-theme
 )
-zplugin ice pick'dev/null' nocompletions blockf \
+zinit ice pick'dev/null' nocompletions blockf \
   multisrc"${omz_plugins}"
-zplugin light robbyrussell/oh-my-zsh
+zinit light robbyrussell/oh-my-zsh
 
 # Snippets
-zplugin ice wait lucid id-as'fzf-keybindings'
-zplugin snippet 'https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh'
+zinit ice wait lucid id-as'fzf-keybindings'
+zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh'
 
-zplugin ice wait lucid id-as'fzf-completion'
-zplugin snippet 'https://github.com/junegunn/fzf/blob/master/shell/completion.zsh'
+zinit ice wait lucid id-as'fzf-completion'
+zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/completion.zsh'
 
 # Completion
-zplugin ice wait'1' lucid as'completion' \
+zinit ice wait'1' lucid as'completion' \
   id-as'beet-completion' mv'beet-completion -> _beet'
-zplugin snippet 'https://github.com/beetbox/beets/blob/master/extra/_beet'
+zinit snippet 'https://github.com/beetbox/beets/blob/master/extra/_beet'
 
-zplugin ice wait'1' lucid as'completion' \
+zinit ice wait'1' lucid as'completion' \
   id-as'docker-compose-completion' mv'docker-compose-completion -> _docker-compose'
-zplugin snippet 'https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose'
+zinit snippet 'https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose'
 
 # Themes
 if [[ "$ZSH_THEME" == "p9k" ]]; then
@@ -146,12 +146,12 @@ if [[ "$ZSH_THEME" == "p9k" ]]; then
   POWERLEVEL9K_SHOW_CHANGESET=true
   POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 
-  zplugin light bhilburn/powerlevel9k
+  zinit light bhilburn/powerlevel9k
 
 elif [[ "$ZSH_THEME" == "p10k" ]]; then
 
-  zplugin ice atload'[[ -f $ZDOTDIR/.p10k.zsh ]] && source $ZDOTDIR/.p10k.zsh || true; _p9k_precmd' \
+  zinit ice atload'[[ -f $ZDOTDIR/.p10k.zsh ]] && source $ZDOTDIR/.p10k.zsh || true; _p9k_precmd' \
     lucid nocd wrap-track'_p9k_precmd'
-  zplugin load romkatv/powerlevel10k
+  zinit load romkatv/powerlevel10k
 
 fi
