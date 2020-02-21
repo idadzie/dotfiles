@@ -13,7 +13,7 @@ foreach piece (
   completion.zsh
   history.zsh
   window.zsh
-  zplugin.zsh
+  zinit.zsh
   aliases.zsh
 ) {
   source "$ZDOTDIR/modules/$piece"
