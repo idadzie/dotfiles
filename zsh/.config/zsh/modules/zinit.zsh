@@ -57,7 +57,7 @@ zinit as'null' from'gh-r' lucid for \
   sbin junegunn/fzf-bin
 
 zinit from'gh-r' lucid for \
-  mv'ghq* -> ghq' sbin'ghq/ghq' motemen/ghq \
+  mv'ghq* -> ghq' sbin'ghq/ghq' x-motemen/ghq \
   mv'pastel* -> pastel' sbin'pastel/pastel' @sharkdp/pastel \
   mv'fd* -> fd' sbin'fd/fd' \
     atclone'cp **/*.1 $ZPFX/share/man/man1' atpull'%atclone' @sharkdp/fd \
