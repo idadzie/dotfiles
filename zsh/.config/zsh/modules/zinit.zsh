@@ -40,7 +40,7 @@ zinit from'gh-r' lucid for \
     rm -rf *~*backup(/^F) (#i)install;
     mv etc/hub.zsh* etc/_hub;
     cp share/man/*/*.1 $ZPFX/share/man/man1' \
-  atpull'%atclone' github/hub
+  atpull'%atclone' @github/hub
 
 zinit as'null' wait lucid light-mode for \
   sbin"bin/git-dsf;bin/diff-so-fancy" zdharma/zsh-diff-so-fancy \
