@@ -2,4 +2,4 @@
 
 (( $+commands[apt] )) || return 0
 
-sudo apt update && apt list --upgradable -a
+sudo apt update && apt list --upgradable
