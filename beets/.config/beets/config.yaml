@@ -5,6 +5,7 @@ threaded: yes
 import:
   copy: no
   move: yes
+  log: ~/.local/share/beets/import.log
 
 per_disc_numbering: yes
 
@@ -33,7 +34,7 @@ fetchart:
   store_source: yes
 
 zero:
-  fields: comments bpm arranger
+  fields: comments arranger
   update_database: true
 
 ftintitle:
@@ -48,18 +49,32 @@ bandcamp:
   art: yes
   split_artist_title: no
 
+# Need to play this by ear. :D
+lastgenre:
+  auto: no
+  force: yes
+  source: track
+  whitelist: yes
+
 asciify_paths: yes
+
+acousticbrainz:
+  tags: all
 
 plugins:
   - acousticbrainz
-  - bandcamp
+  # - bandcamp
+  - beatport
   - deezer
+  # - discogs
   - edit
   - embedart
   - fetchart
   - fromfilename
   - ftintitle
+  - info
   - inline
+  - lastgenre
   - lyrics
   - mbsync
   - missing
