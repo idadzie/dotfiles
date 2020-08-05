@@ -19,15 +19,15 @@ export LESSCHARSET='utf-8'
 # export PATH="$HOME/.poetry/bin:$PATH"
 
 # Local binaries
-export PATH="$HOME/.local/bin:$PATH"
+export -U PATH="$HOME/.local/bin${PATH:+:$PATH}"
 
 # Yarn
 if (( $+commands[yarn] )); then
-  export PATH="$PATH:$HOME/.yarn/bin"
+  export -U PATH="$HOME/.yarn/bin${PATH:+:$PATH}"
 fi
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+export -U PATH="$HOME/.cargo/bin${PATH:+:$PATH}"
 
 # FZF
 typeset -AU __FZF
