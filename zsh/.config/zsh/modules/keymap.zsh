@@ -65,6 +65,7 @@ bindkey '^X^B'    fuzzy-multi-ghq-repository
 bindkey '^X^E'    edit-command-line
 bindkey '^X^G'    fuzzy-cd-ghq-repository
 bindkey '^Xs'     insert-sudo
+bindkey '^M'      magic-enter
 
 # Put into application mode and validate ${terminfo}.
 zle-line-init() {

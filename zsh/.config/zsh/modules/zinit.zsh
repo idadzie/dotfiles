@@ -82,7 +82,6 @@ omz_plugins=(
   plugins/git/git.plugin.zsh
   plugins/extract/extract.plugin.zsh
   plugins/encode64/encode64.plugin.zsh
-  plugins/magic-enter/magic-enter.plugin.zsh
   themes/fishy.zsh-theme
 )
 zinit ice pick'dev/null' nocompletions blockf \
