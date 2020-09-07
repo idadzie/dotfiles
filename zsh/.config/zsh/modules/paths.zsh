@@ -31,6 +31,8 @@ autoload -Uz $ZDOTDIR/functions/**/*(N:t) \
 promptinit
 colors
 
+autoload -U +X bashcompinit && bashcompinit
+
 if isosx && [[ -s /etc/paths ]]; then
   local etcpaths
   declare -a etcpaths; etcpaths=( ${(f)"$(</etc/paths)"} )
