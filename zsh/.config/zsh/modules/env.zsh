@@ -26,6 +26,13 @@ if (( $+commands[yarn] )); then
   export -U PATH="$HOME/.yarn/bin${PATH:+:$PATH}"
 fi
 
+# Go
+# export GOENV_DISABLE_GOPATH=0
+# export GOPATH="$HOME/.local/go"
+export GOENV_GOPATH_PREFIX="$HOME/.local/go"
+export GOBIN="$HOME/.local/go/bin"
+export -U PATH="$HOME/.local/go/bin${PATH:+:$PATH}"
+
 # Rust
 export -U PATH="$HOME/.cargo/bin${PATH:+:$PATH}"
 
