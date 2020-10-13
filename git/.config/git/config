@@ -34,4 +34,4 @@
 [diff-so-fancy]
     markEmptyLines = false
 [ghq]
-    root = ~/Code/src
+    root = ~/Code
