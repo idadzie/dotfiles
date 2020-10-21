@@ -53,7 +53,6 @@ zinit as'null' from'gh-r' lucid for \
   mv'shfmt* -> shfmt' sbin @mvdan/sh \
   mv'countdown* -> countdown' sbin antonmedv/countdown \
   mv'subify* -> subify' sbin matcornic/subify \
-  bpick'*amd64.tgz' sbin cjbassi/gotop \
   sbin junegunn/fzf-bin
 
 zinit from'gh-r' lucid for \
