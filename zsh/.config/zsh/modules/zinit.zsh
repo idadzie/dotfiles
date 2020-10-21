@@ -52,7 +52,6 @@ zinit as'null' from'gh-r' lucid for \
   mv'jq* -> jq' sbin stedolan/jq \
   mv'shfmt* -> shfmt' sbin @mvdan/sh \
   mv'countdown* -> countdown' sbin antonmedv/countdown \
-  mv'subify* -> subify' sbin matcornic/subify \
   sbin junegunn/fzf-bin
 
 zinit from'gh-r' lucid for \
