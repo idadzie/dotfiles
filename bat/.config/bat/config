@@ -8,3 +8,5 @@
 --map-syntax ".zshrc.local:Bourne Again Shell (bash)"
 --map-syntax ".zshenv.local:Bourne Again Shell (bash)"
 --map-syntax ".local:Bourne Again Shell (bash)"
+--map-syntax "*.{re,rei}:JavaScript (Babel)"
+--map-syntax "yarn.lock:YAML"
