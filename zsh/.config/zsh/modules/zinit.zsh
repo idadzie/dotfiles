@@ -42,12 +42,16 @@ zinit from'gh-r' lucid for \
     cp share/man/*/*.1 $ZPFX/share/man/man1' \
   atpull'%atclone' @github/hub
 
+zinit from'gh-r' lucid for \
+  sbin'**/gh' \
+  atclone'cp -vf **/*.1 $ZPFX/share/man/man1' atpull'%atclone' @cli/cli
+
 zinit as'null' wait lucid light-mode for \
-  sbin"bin/git-dsf;bin/diff-so-fancy" zdharma/zsh-diff-so-fancy \
+  sbin'bin/git-dsf;bin/diff-so-fancy' zdharma/zsh-diff-so-fancy \
   sbin'emojify;fuzzy-emoji' src'fuzzy-emoji-zle.zsh' wfxr/emoji-cli
 
 zinit as'null' from'gh-r' lucid for \
-  mv"exa* -> exa" sbin ogham/exa \
+  mv'exa* -> exa' sbin ogham/exa \
   mv'docker* -> docker-compose' sbin docker/compose \
   mv'jq* -> jq' sbin stedolan/jq \
   mv'shfmt* -> shfmt' sbin @mvdan/sh \
@@ -101,6 +105,9 @@ zinit snippet 'https://github.com/beetbox/beets/blob/master/extra/_beet'
 zinit ice wait'1' lucid as'completion' \
   id-as'docker-compose-completion' mv'docker-compose-completion -> _docker-compose'
 zinit snippet 'https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose'
+
+zinit wait'1' as'completion' id-as'gh-completion' lucid for \
+  atclone'gh completion -s zsh > _gh' atpull'%atclone' zdharma/null
 
 # Themes
 if [[ "$ZSH_THEME" == "p9k" ]]; then
