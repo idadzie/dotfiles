@@ -78,17 +78,25 @@ zinit wait lucid for \
 # Plugins
 zinit light MichaelAquilina/zsh-you-should-use
 
-local omz_plugins
-omz_plugins=(
-  lib/git.zsh
-  plugins/git/git.plugin.zsh
-  plugins/extract/extract.plugin.zsh
-  plugins/encode64/encode64.plugin.zsh
-  themes/fishy.zsh-theme
-)
-zinit ice pick'dev/null' nocompletions blockf \
-  multisrc"${omz_plugins}"
-zinit light robbyrussell/oh-my-zsh
+# local omz_plugins
+# omz_plugins=(
+#   lib/git.zsh
+#   plugins/git/git.plugin.zsh
+#   plugins/extract/extract.plugin.zsh
+#   plugins/encode64/encode64.plugin.zsh
+#   themes/fishy.zsh-theme
+# )
+# zinit ice pick'dev/null' nocompletions blockf \
+#   multisrc"${omz_plugins}"
+# zinit light robbyrussell/oh-my-zsh
+
+zinit lucid for \
+  OMZL::git.zsh \
+  OMZP::git \
+  OMZP::extract \
+  as'completion' OMZP::extract/_extract \
+  OMZP::encode64 \
+  OMZT::fishy
 
 # Snippets
 zinit ice wait lucid id-as'fzf-keybindings'
