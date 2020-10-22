@@ -169,7 +169,7 @@ Cargo.lock
 ### Crystal
 /docs/
 /lib/
-/bin/
+# /bin/
 /.shards/
 *.dwarf
 
