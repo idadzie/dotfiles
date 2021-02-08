@@ -43,7 +43,7 @@ zinit from'gh-r' lucid for \
   atpull'%atclone' @github/hub
 
 zinit from'gh-r' lucid for \
-  sbin'**/gh' \
+  bpick'*amd64.tar.gz' sbin'**/gh' \
   atclone'cp -vf **/*.1 $ZPFX/share/man/man1' atpull'%atclone' @cli/cli
 
 zinit as'null' wait lucid light-mode for \
