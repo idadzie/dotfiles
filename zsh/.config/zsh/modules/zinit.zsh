@@ -163,7 +163,7 @@ if [[ "$ZSH_THEME" == "p9k" ]]; then
 elif [[ "$ZSH_THEME" == "p10k" ]]; then
 
   zinit ice atload'[[ -f $ZDOTDIR/.p10k.zsh ]] && source $ZDOTDIR/.p10k.zsh || true; _p9k_precmd' \
-    lucid nocd wrap-track'_p9k_precmd'
+    lucid nocd
   zinit load romkatv/powerlevel10k
 
 fi
