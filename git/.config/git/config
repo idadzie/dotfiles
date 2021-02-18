@@ -33,5 +33,7 @@
     whitespace = red reverse
 [diff-so-fancy]
     markEmptyLines = false
+[init]
+    defaultBranch = main
 [ghq]
     root = ~/Code
