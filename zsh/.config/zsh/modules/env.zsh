@@ -15,11 +15,12 @@ export PAGER='less'
 export LESS='-R -f -X -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
 export LESSCHARSET='utf-8'
 
-# Poetry
-# export PATH="$HOME/.poetry/bin:$PATH"
-
 # Local binaries
 export -U PATH="$HOME/.local/bin${PATH:+:$PATH}"
+
+# Poetry
+export POETRY_HOME="$HOME/.local/poetry"
+export -U PATH="$POETRY_HOME/bin${PATH:+:$PATH}"
 
 # Yarn
 if (( $+commands[yarn] )); then
