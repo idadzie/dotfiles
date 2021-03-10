@@ -15,8 +15,6 @@
     prompt = false
 [commit]
     template = ~/.config/git/template
-[include]
-    path = ~/.config/git/local
 [color]
     ui = true
 [color "diff-highlight"]
@@ -37,3 +35,5 @@
     defaultBranch = main
 [ghq]
     root = ~/Code
+[include]
+    path = ~/.config/git/local
