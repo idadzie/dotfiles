@@ -49,7 +49,7 @@ alias path='echo -e ${PATH//:/\\n}'
 # Conditional aliases.
 (( $+commands[bat] )) && alias cat='bat'
 (( $+commands[nvim] )) && alias vim='nvim'
-(( $+commands[python3] )) && alias server='python3 -m http.server 80'
+(( $+commands[python3] )) && alias server='python3 -m http.server 6969'
 
 if (( $+commands[bpytop] )); then
   alias top='bpytop'
