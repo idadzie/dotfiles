@@ -10,7 +10,7 @@ fi
 needle=( ${${(M)lines:#ZSH_THEME=*}[1]} )
 local theme_=${${(s:=:)"${(Q)needle}"}[2]}
 
-ZSH_THEME="${theme_:-p9k}"
+ZSH_THEME="${theme_:-p10k}"
 
 case "$TERM_PROGRAM" in
   'python2'|'terminator'|'iTerm.app'|'gnome-terminal'|'tmux'|'tilix')
