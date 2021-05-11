@@ -51,7 +51,7 @@ zinit as'null' wait lucid light-mode for \
   sbin'emojify;fuzzy-emoji' src'fuzzy-emoji-zle.zsh' wfxr/emoji-cli
 
 zinit as'null' from'gh-r' lucid for \
-  mv'exa* -> exa' sbin ogham/exa \
+  mv'exa* -> exa' sbin'**/exa' ogham/exa \
   mv'docker* -> docker-compose' sbin'docker-compose' docker/compose \
   mv'jq* -> jq' sbin stedolan/jq \
   mv'shfmt* -> shfmt' sbin @mvdan/sh \
