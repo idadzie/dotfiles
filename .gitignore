@@ -31,5 +31,3 @@ zsdoc/data
 # local environment files
 *.local
 
-# Stow files
-.stowrc
