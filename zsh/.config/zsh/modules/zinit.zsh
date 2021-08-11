@@ -71,6 +71,15 @@ zinit wait lucid for \
   sbin'bin/anyenv' \
     atload'export ANYENV_ROOT=$HOME/.local/anyenv; eval "$(anyenv init -)"' anyenv/anyenv
 
+zinit as'null' wait lucid light-mode for \
+  id-as'sdkman' run-atpull \
+  atclone"wget https://get.sdkman.io/\?rcupdate=false -O scr.sh;
+    SDKMAN_DIR=$HOME/.local/sdkman bash scr.sh" \
+  atpull"SDKMAN_DIR=$HOME/.local/sdkman sdk selfupdate" \
+  atinit"export SDKMAN_DIR=$HOME/.local/sdkman;
+    source $HOME/.local/sdkman/bin/sdkman-init.sh" \
+  zdharma/null
+
 # zinit wait lucid sbin'bin/anyenv' \
 #   atload'export ANYENV_ROOT=$HOME/.anyenv; eval "$(anyenv init -)"'
 # zinit light anyenv/anyenv
