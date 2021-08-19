@@ -8,7 +8,6 @@ Usage: $self [THEME]
 Set prompt theme.
 
 Themes:
-  p9k        Powerlevel9k
   p10k       Powerlevel10k
   fishy      Fishy
 HELP
