@@ -2,7 +2,7 @@
 # zshrc
 #
 
-foreach piece (
+foreach module (
   paths.zsh
   term.zsh
   theme.zsh
@@ -16,7 +16,7 @@ foreach piece (
   zinit.zsh
   aliases.zsh
 ) {
-  source "$ZDOTDIR/modules/$piece"
+  source "$ZDOTDIR/modules/$module"
 }
 
 # Local plugins, completions, functions, etc.
