@@ -3,7 +3,7 @@
 #
 
 # Sets the location of the history file.
-HISTFILE=$XDG_DATA_HOME/zsh/history
+HISTFILE=$XDG_STATE_HOME/zsh/history
 
 # Limit of history entries.
 HISTSIZE=1000000
