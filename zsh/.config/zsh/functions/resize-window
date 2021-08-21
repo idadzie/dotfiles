@@ -1,6 +1,6 @@
 # Resize an application window.
 
-if (( ! $+commands[xdotool] )) && (( ! $+commands[xdpyinfo] )); then
+if (( ! $+commands[xdotool] )) || (( ! $+commands[xdpyinfo] )); then
   echo 'Install xdotool & xdpyinfo to use this.' && return 0
 fi
 
