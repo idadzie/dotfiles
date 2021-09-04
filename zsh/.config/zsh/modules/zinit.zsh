@@ -34,13 +34,13 @@ zinit light tj/git-extras
 # At least this way I won't forget to install the completion
 # files, have to go back to the repo and manually add to FPATH
 # on a new PC.
-zinit from'gh-r' lucid for \
-  sbin'bin/hub' \
-  atclone'mv hub*/* .;
-    rm -rf *~*backup(/^F) (#i)install;
-    mv etc/hub.zsh* etc/_hub;
-    cp share/man/*/*.1 $ZPFX/share/man/man1' \
-  atpull'%atclone' @github/hub
+# zinit from'gh-r' lucid for \
+#   sbin'bin/hub' \
+#   atclone'mv hub*/* .;
+#     rm -rf *~*backup(/^F) (#i)install;
+#     mv etc/hub.zsh* etc/_hub;
+#     cp share/man/*/*.1 $ZPFX/share/man/man1' \
+#   atpull'%atclone' @github/hub
 
 zinit from'gh-r' lucid for \
   bpick'*amd64.tar.gz' sbin'**/gh' \
