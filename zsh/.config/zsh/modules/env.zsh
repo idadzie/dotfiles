@@ -31,7 +31,9 @@ fi
 export GOENV_GOPATH_PREFIX="$HOME/.local/go"
 
 # Rust
-export -U PATH="$HOME/.cargo/bin${PATH:+:$PATH}"
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export -U PATH="$CARGO_HOME/bin${PATH:+:$PATH}"
 
 # FZF
 typeset -AU __FZF
