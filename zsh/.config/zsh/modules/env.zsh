@@ -19,7 +19,7 @@ export LESSCHARSET='utf-8'
 export -U PATH="$HOME/.local/bin${PATH:+:$PATH}"
 
 # Poetry
-export POETRY_HOME="$HOME/.local/poetry"
+export POETRY_HOME="$XDG_DATA_HOME/poetry"
 export -U PATH="$POETRY_HOME/bin${PATH:+:$PATH}"
 
 # pipx
@@ -31,7 +31,7 @@ if (( $+commands[yarn] )); then
 fi
 
 # Go
-export GOENV_GOPATH_PREFIX="$HOME/.local/go"
+export GOENV_GOPATH_PREFIX="$XDG_DATA_HOME/go"
 
 # Rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"

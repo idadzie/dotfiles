@@ -3,7 +3,7 @@
 #
 
 typeset -A ZINIT
-ZINIT_HOME=$HOME/.local/zinit
+ZINIT_HOME=$XDG_DATA_HOME/zinit
 ZINIT[HOME_DIR]=$ZINIT_HOME
 ZINIT[ZCOMPDUMP_PATH]=$XDG_CACHE_HOME/zsh/compdump
 
@@ -69,15 +69,15 @@ zinit from'gh-r' lucid for \
 zinit wait lucid for \
   wfxr/forgit \
   sbin'bin/anyenv' \
-    atload'export ANYENV_ROOT=$HOME/.local/anyenv; eval "$(anyenv init -)"' anyenv/anyenv
+    atload'export ANYENV_ROOT=$XDG_DATA_HOME/anyenv; eval "$(anyenv init -)"' anyenv/anyenv
 
 zinit as'null' wait lucid light-mode for \
   id-as'sdkman' run-atpull \
   atclone"wget https://get.sdkman.io/\?rcupdate=false -O scr.sh;
-    SDKMAN_DIR=$HOME/.local/sdkman bash scr.sh" \
-  atpull"SDKMAN_DIR=$HOME/.local/sdkman sdk selfupdate" \
-  atinit"export SDKMAN_DIR=$HOME/.local/sdkman;
-    source $HOME/.local/sdkman/bin/sdkman-init.sh" \
+    SDKMAN_DIR=$XDG_DATA_HOME/sdkman bash scr.sh" \
+  atpull"SDKMAN_DIR=$XDG_DATA_HOME/sdkman sdk selfupdate" \
+  atinit"export SDKMAN_DIR=$XDG_DATA_HOME/sdkman;
+    source $XDG_DATA_HOME/sdkman/bin/sdkman-init.sh" \
   zdharma/null
 
 # zinit wait lucid sbin'bin/anyenv' \
