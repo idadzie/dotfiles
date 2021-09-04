@@ -22,6 +22,9 @@ export -U PATH="$HOME/.local/bin${PATH:+:$PATH}"
 export POETRY_HOME="$HOME/.local/poetry"
 export -U PATH="$POETRY_HOME/bin${PATH:+:$PATH}"
 
+# pipx
+export PIPX_HOME="$XDG_DATA_HOME/pipx"
+
 # Yarn
 if (( $+commands[yarn] )); then
   export -U PATH="$HOME/.yarn/bin${PATH:+:$PATH}"
@@ -31,11 +34,11 @@ fi
 export GOENV_GOPATH_PREFIX="$HOME/.local/go"
 
 # Rust
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
-export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export -U PATH="$CARGO_HOME/bin${PATH:+:$PATH}"
 
-# FZF
+# fzf
 typeset -AU __FZF
 if (( $+commands[fd] )); then
   __FZF[CMD]='fd --hidden --no-ignore-vcs --exclude ".git/*" --exclude "node_modules/*"'
