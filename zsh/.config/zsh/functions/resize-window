@@ -37,7 +37,7 @@ declare -a windows
 if [[ "$1" == "-c" ]] || [[ "$1" == "--center" ]]; then
   shift
 
-  windows=$(command xdotool search --onlyvisible --name $1)
+  windows=$(command xdotool search --onlyvisible --class $1)
   windows=( ${(f)windows} )
   posX=$(($display_width/2-$2/2))
   posY=$(($display_height/2-$3/2))
@@ -47,7 +47,7 @@ if [[ "$1" == "-c" ]] || [[ "$1" == "--center" ]]; then
     xdotool windowmove $window $posX $posY
   done
 else
-  windows=$(command xdotool search --onlyvisible --name $1)
+  windows=$(command xdotool search --onlyvisible --class $1)
   windows=( ${(f)windows} )
   for window in $windows; do
     xdotool windowsize $window $2 $3
