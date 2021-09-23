@@ -124,6 +124,10 @@ zinit ice wait'1' lucid as'completion' \
   id-as'docker-compose-completion' mv'docker-compose-completion -> _docker-compose'
 zinit snippet 'https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose'
 
+zinit ice wait'1' lucid as'completion' has'exiftool' \
+  id-as'exiftool-completion' mv'exiftool-completion -> _exiftool'
+zinit snippet 'https://github.com/HeLiBloks/exiftool-zsh-completion/blob/master/_exiftool'
+
 zinit wait'1' as'completion' id-as'gh-completion' lucid for \
   atclone'gh completion -s zsh > _gh' atpull'%atclone' zdharma/null
 
