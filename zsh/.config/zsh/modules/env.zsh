@@ -54,7 +54,7 @@ fi
 export FZF_DEFAULT_COMMAND="${__FZF[DEFAULT]}"
 export FZF_CTRL_T_COMMAND="${__FZF[CMD]}"
 export FZF_ALT_C_COMMAND="${__FZF[ALT_C]}"
-export FZF_DEFAULT_OPTS='--min-height 30 --height 50% --reverse --tabstop 2 --multi --margin 0,3,3,3'
+export FZF_DEFAULT_OPTS='--min-height 30 --height 50% --reverse --tabstop 2 --multi --margin 0,3,3,3 --exit-0'
 export FZF_CTRL_T_OPTS='
 --preview-window right:50%
 --preview "(bat --style=numbers,changes --wrap never --color always {} || highlight -O ansi -l {} || cat {} || tree -C {}) 2> /dev/null | head -200"
