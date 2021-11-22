@@ -8,7 +8,7 @@ ZINIT[HOME_DIR]=$ZINIT_HOME
 ZINIT[ZCOMPDUMP_PATH]=$XDG_CACHE_HOME/zsh/compdump
 
 if [[ ! -f $ZINIT_HOME/bin/zinit.zsh ]]; then
-  git clone https://github.com/zdharma/zinit.git $ZINIT_HOME/bin
+  git clone https://github.com/zdharma-continuum/zinit.git $ZINIT_HOME/bin
   zcompile $ZINIT_HOME/bin/zinit.zsh
 fi
 
@@ -20,7 +20,7 @@ autoload -Uz compinit
 compinit -u -d "$XDG_CACHE_HOME/zsh/compdump"
 
 # Zinit extensions
-zinit light-mode for zinit-zsh/z-a-bin-gem-node
+zinit light-mode for zdharma-continuum/zinit-annex-bin-gem-node
 
 # Commands
 zinit light rupa/z
@@ -47,7 +47,7 @@ zinit from'gh-r' lucid for \
   atclone'cp -vf **/*.1 $ZPFX/share/man/man1' atpull'%atclone' @cli/cli
 
 zinit as'null' wait lucid light-mode for \
-  sbin'bin/git-dsf;bin/diff-so-fancy' zdharma/zsh-diff-so-fancy \
+  sbin'bin/git-dsf;bin/diff-so-fancy' zdharma-continuum/zsh-diff-so-fancy \
   sbin'emojify;fuzzy-emoji' src'fuzzy-emoji-zle.zsh' wfxr/emoji-cli
 
 zinit as'null' from'gh-r' lucid for \
@@ -79,7 +79,7 @@ zinit as'null' wait lucid light-mode for \
   atpull"SDKMAN_DIR=$XDG_DATA_HOME/sdkman sdk selfupdate" \
   atinit"export SDKMAN_DIR=$XDG_DATA_HOME/sdkman;
     source $XDG_DATA_HOME/sdkman/bin/sdkman-init.sh" \
-  zdharma/null
+  zdharma-continuum/null
 
 # zinit wait lucid sbin'bin/anyenv' \
 #   atload'export ANYENV_ROOT=$HOME/.anyenv; eval "$(anyenv init -)"'
@@ -129,7 +129,7 @@ zinit ice wait'1' lucid as'completion' has'exiftool' \
 zinit snippet 'https://github.com/HeLiBloks/exiftool-zsh-completion/blob/master/_exiftool'
 
 zinit wait'1' as'completion' id-as'gh-completion' lucid for \
-  atclone'gh completion -s zsh > _gh' atpull'%atclone' zdharma/null
+  atclone'gh completion -s zsh > _gh' atpull'%atclone' zdharma-continuum/null
 
 # Theme
 if [[ "$ZSH_THEME" == "p10k" ]]; then
