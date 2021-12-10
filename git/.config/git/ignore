@@ -405,3 +405,6 @@ zsdoc/data
 
 # local environment files
 *.local
+
+# mrbob
+.mrbob.ini
