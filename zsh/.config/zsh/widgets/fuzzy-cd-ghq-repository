@@ -9,7 +9,8 @@ fi
 local repository opts
 
 opts="
--0 --ansi --select-1
+$FZF_DEFAULT_OPTS
+-0 --ansi --select-1 --height 70%
 --no-preview --delimiter=/ --nth=2,3,4,5
 --extended-exact --bind='ctrl-s:toggle-sort'
 "
