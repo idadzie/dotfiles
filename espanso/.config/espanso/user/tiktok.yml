@@ -1,0 +1,64 @@
+name: tiktok
+parent: default
+
+matches:
+  - trigger: "--tiktok"
+    replace: "[[TikTok/{{output}}]]"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "link"
+        type: "shell"
+        params:
+          cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's/?.*[_d|u_code]=.*//g'"
+      - name: "output"
+        type: "shell"
+        params:
+          cmd: |-
+            awk "BEGIN {
+              link = \"${ESPANSO_LINK}\"
+              split(link, arr, \"@\")
+              split(arr[2], arr2, \"video\")
+              gsub(\"/\", \"\", arr2[1])
+              gsub(\"/\", \"\", arr2[2])
+              printf \"%s/%s\n\", arr2[1], arr2[2]
+            }"
+
+  - trigger: ":tiktok"
+    replace: |
+      - url:: [@link]({{link}})
+        type:: tiktok
+        creator:: [[TikTok/{{creator}}]]
+        tags::
+        recommended_by::
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "link"
+        type: "shell"
+        params:
+          cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's/?.*[_d|u_code]=.*//g'"
+      - name: "creator"
+        type: "shell"
+        params:
+          cmd: |-
+            awk "BEGIN {
+              link = \"${ESPANSO_LINK}\"
+              split(link, arr, \"@\")
+              split(arr[2], arr2, \"video\")
+              gsub(\"/\", \"\", arr2[1])
+              printf \"%s\n\", arr2[1]
+            }"
+
+  - trigger: ":tkc"
+    replace: |-
+      - url:: [@link]({{link}})
+        type:: tiktoker
+        tags::
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "link"
+        type: "shell"
+        params:
+          cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's|/video.*||g'"

@@ -1,0 +1,12 @@
+name: twitter
+parent: default
+
+matches:
+  - trigger: "@t"
+    replace: |
+      - The tweet.
+        - {{tweet {{clipboard}}}}
+      - Screenshot of tweet.
+    vars:
+      - name: "clipboard"
+        type: "clipboard"

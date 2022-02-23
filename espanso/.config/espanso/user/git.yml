@@ -1,0 +1,206 @@
+name: git
+parent: default
+
+matches:
+  # GitHub
+  - trigger: ":ghrepo"
+    replace: |-
+      - url:: [@GitHub]({{url}})
+        type:: repository
+        tags:: GitHub
+        created_by::
+        recommended_by::
+      - **Description**
+        - {{description}}
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "description"
+        type: "shell"
+        params:
+          cmd: |-
+            xidel -s $ESPANSO_URL --extract "css('meta[name=\"description\"]')/@content" | sed -e 's|\sContribute.*||g; s| - GitHub.*||g;'
+
+  # GitLab
+  - trigger: ":glrepo"
+    replace: |-
+      - url:: [@GitLab]({{url}})
+        type:: repository
+        tags:: GitLab
+        created_by:: [[{{creator}}]]
+        recommended_by::
+      - **Description**
+        - {{description}}
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "creator"
+        type: "shell"
+        params:
+          cmd: |-
+            entitle $ESPANSO_URL | sed -e 's|\s/.*||g'
+      - name: "description"
+        type: "shell"
+        params:
+          cmd: |-
+            xidel -s $ESPANSO_URL --extract "css('meta[name=\"description\"]')/@content"
+
+  # Shared
+  - trigger: "--repo"
+    replace: "[[{{repository}}]]"
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "repository"
+        type: "shell"
+        params:
+          cmd: |-
+            echo $ESPANSO_URL | sed -e 's%https\?://git[hub|lab].*com/%%g'
+
+  # Developer
+  - trigger: "--dev"
+    replace: "[[{{name}}]]"
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "name"
+        type: "shell"
+        params:
+          cmd: |-
+            [[ "$ESPANSO_URL" =~ "github" ]] && xidel -s $ESPANSO_URL --extract "css('title')" | sed -e 's/.*(//; s/).*//' | awk 'NR==1' || entitle $ESPANSO_URL | sed -e 's|\s/.*||g'
+
+  - trigger: ":dev"
+    replace: |-
+      - url:: [@{{remote}}]({{url}})
+        type:: developer
+        alias:: {{username}}
+      - **Bio**
+        - {{bio}}
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "username"
+        type: "shell"
+        params:
+          cmd: |-
+            echo $ESPANSO_URL | sed -e 's%https\?://git[hub|lab].*com/%%g; s|/.*||g;'
+      - name: "bio"
+        type: "shell"
+        params:
+          cmd: |-
+            xidel -s $ESPANSO_URL --extract "css('meta[name=\"description\"]')/@content" | sed -e 's|\s-.*||g'
+      - name: "remote"
+        type: "shell"
+        params:
+          cmd: |-
+            [[ "$ESPANSO_URL" =~ "github" ]] && echo GitHub || echo GitLab
+
+  # Issue
+  - trigger: "--i"
+    replace: "[[Issue/{{title}}]]"
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "title"
+        type: "shell"
+        params:
+          cmd: |-
+            entitle $ESPANSO_URL | sed -e 's/ · Issue.*//g; s/\(.*\)([#0-9]*)/\1/;'
+
+  - trigger: ":iss"
+    replace: |-
+      - url:: [@{{remote}}]({{url}})
+        type:: issue
+        status::
+        author::
+        created::
+        closed::
+        tags:: {{remote}}
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "remote"
+        type: "shell"
+        params:
+          cmd: |-
+            [[ "$ESPANSO_URL" =~ "github" ]] && echo GitHub || echo GitLab
+
+  # Pull request
+  - trigger: "--pu"
+    replace: "[[Pull Request/{{title}}]]"
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "title"
+        type: "shell"
+        params:
+          cmd: |-
+            entitle $ESPANSO_URL | sed -e 's/ · [Pull|Merge].*//g; s/\(.*\)([#0-9]*)/\1/; s/ by.*//g;'
+
+  - trigger: ":pu"
+    replace: |-
+      - url:: [@{{remote}}]({{url}})
+        type:: pull-request
+        status::
+        author::
+        created::
+        closed::
+        merged::
+        tags:: {{remote}}
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "remote"
+        type: "shell"
+        params:
+          cmd: |-
+            [[ "$ESPANSO_URL" =~ "github" ]] && echo GitHub || echo GitLab
+
+  # GitHub discussion
+  - trigger: "--di"
+    replace: "[[Discussion/{{title}}]]"
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "title"
+        type: "shell"
+        params:
+          cmd: |-
+            entitle $ESPANSO_URL | sed -e 's/ · Discussion.*//g'
+
+  - trigger: ":di"
+    replace: |-
+      - url:: [@link]({{url}})
+        type:: discussion
+        tags::
+    vars:
+      - name: "url"
+        type: "clipboard"
+
+  # Git[Hub|Lab] organisation
+  - trigger: ":org"
+    replace: |-
+      - url:: [@{{remote}}]({{url}})
+        type:: organisation
+        alias:: {{organisation}}
+        tags:: $|$
+      - **About**
+        - {{about}}
+    vars:
+      - name: "url"
+        type: "clipboard"
+      - name: "organisation"
+        type: "shell"
+        params:
+          cmd: |-
+            echo $ESPANSO_URL | sed -e 's%https\?://git[hub|lab].*com/%%g; s|/.*||g;'
+      - name: "about"
+        type: "shell"
+        params:
+          cmd: |-
+            xidel -s $ESPANSO_URL --extract "css('meta[name=\"description\"]')/@content" | sed -e 's|\s-.*||g'
+      - name: "remote"
+        type: "shell"
+        params:
+          cmd: |-
+            [[ "$ESPANSO_URL" =~ "github" ]] && echo GitHub || echo GitLab

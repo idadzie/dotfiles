@@ -1,0 +1,39 @@
+name: book
+parent: default
+
+matches:
+  - trigger: "--book"
+    replace: "[[Book/{{output}}]]"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "output"
+        type: "shell"
+        params:
+          cmd: "entitle $ESPANSO_CLIPBOARD"
+
+  # Credit: https://discuss.logseq.com/t/book-framework-setup-in-logseq-v1-2021
+  - trigger: ":book"
+    replace: |-
+      - status:: #toread
+        type:: book
+        format::
+        year::
+        topics::
+        genre::
+        tags::
+        icon:: 📖
+        author::
+        url::
+        recommended_by::
+        start::
+        end::
+        rating:: TBD
+        digested::
+      - Quotes
+      - Liked
+      - Summary
+      - Permanent notes
+    vars:
+      - name: "clipboard"
+        type: "clipboard"

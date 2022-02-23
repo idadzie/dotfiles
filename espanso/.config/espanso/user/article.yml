@@ -1,0 +1,29 @@
+name: article
+parent: default
+
+matches:
+  - trigger: "--ar"
+    replace: "[[Article/{{output}}]]"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "output"
+        type: "shell"
+        params:
+          cmd: "entitle $ESPANSO_CLIPBOARD"
+
+  - trigger: ":ar"
+    replace: |-
+      - url:: [@link]({{clipboard}})
+        status:: #read
+        type:: article
+        tags::
+        author::
+        year:: [[{{year}}]]
+        publisher::
+        published::
+        recommended_by::
+        digested::
+    vars:
+      - name: "clipboard"
+        type: "clipboard"

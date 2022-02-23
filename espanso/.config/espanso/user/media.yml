@@ -1,0 +1,52 @@
+name: media
+parent: default
+
+matches:
+  - trigger: ":movie"
+    replace: |-
+      - status::
+        type:: movie
+        genre::
+        tags::
+        url::
+        year:: [[{{year}}]]
+        release::
+        recommended_by::
+        rating:: TBD
+        alias::
+
+  - trigger: ":anime"
+    replace: |-
+      - status::
+        type:: anime
+        genre::
+        tags::
+        url::
+        release::
+        recommended_by::
+        rating:: TBD
+        alias::
+
+  - trigger: ":series"
+    replace: |-
+      - status::
+        type:: series
+        genre::
+        tags::
+        url::
+        release::
+        recommended_by::
+        rating:: TBD
+        alias::
+
+  - trigger: ":kdrama"
+    replace: |-
+      - status::
+        type:: kdrama
+        genre::
+        tags::
+        url::
+        release::
+        recommended_by::
+        rating:: TBD
+        alias::

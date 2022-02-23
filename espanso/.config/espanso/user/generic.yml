@@ -1,0 +1,128 @@
+name: generic
+parent: default
+
+matches:
+  - trigger: ":today"
+    replace: "{{date}}"
+    vars:
+      - name: "date"
+        type: "date"
+        params:
+          format: "%A, %B %d, %Y"
+
+  - trigger: ":now"
+    replace: "{{date}}"
+    vars:
+      - name: "date"
+        type: "date"
+        params:
+          format: "%H:%M"
+
+  # Daily notes
+  - trigger: "@daily"
+    replace: |-
+      - Create
+      - Consume
+      - Connect
+
+  # Title
+  - trigger: "--l"
+    replace: "[[{{output}}]]"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "output"
+        type: "shell"
+        params:
+          cmd: "entitle $ESPANSO_CLIPBOARD"
+
+  # Title sans [[]] reference
+  - trigger: "--title"
+    replace: "{{output}}"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "output"
+        type: "shell"
+        params:
+          cmd: "entitle $ESPANSO_CLIPBOARD"
+
+  # Link
+  - trigger: ":l"
+    replace: "[@link]({{clipboard}})"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+
+  # Editable link
+  - trigger: ":el"
+    replace: "[@$|$]({{clipboard}})"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+
+  # Website properties
+  - trigger: ":w"
+    replace: |-
+      - url:: [@link]({{clipboard}})
+        type:: website
+        tags::
+        recommended_by::
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+
+  # Documentation
+  - trigger: "--docs"
+    replace: "[[Documentation/{{output}}]]"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "output"
+        type: "shell"
+        params:
+          cmd: "entitle $ESPANSO_CLIPBOARD"
+
+  - trigger: ":docs"
+    replace: |-
+      - url:: [@link]({{clipboard}})
+        type:: documentation
+        tags::
+        source::
+        recommended_by::
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+
+  # Forum post
+  - trigger: "--f"
+    replace: "[[Forum/{{output}}]]"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "output"
+        type: "shell"
+        params:
+          cmd: "entitle $ESPANSO_CLIPBOARD"
+
+  - trigger: ":f"
+    replace: |-
+      - url:: [@link]({{clipboard}})
+        type:: forum-post
+        tags::
+        author::
+        source::
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+
+  # Sans [[]] references; Useful for Grammarly :D
+  - trigger: "--o"
+    replace: "{{output}}"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "output"
+        type: "shell"
+        params:
+          cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's/[][]//g'"

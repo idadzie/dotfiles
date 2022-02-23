@@ -1,0 +1,38 @@
+name: reddit
+parent: default
+
+matches:
+  - trigger: "--reddit"
+    replace: "[[{{title}}]]"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "link"
+        type: "shell"
+        params:
+          cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's/?utm.*//g'"
+      - name: "title"
+        type: "shell"
+        params:
+          cmd: |-
+            entitle $ESPANSO_LINK | sed -e 's|r/|reddit/|; s| - |/|;'
+
+  - trigger: ":reddit"
+    replace: |
+      - url:: [@link]({{link}})
+        type:: reddit-post
+        tags::
+        subreddit:: [[{{subreddit}}]]
+        recommended_by::
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "link"
+        type: "shell"
+        params:
+          cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's/?utm.*//g'"
+      - name: "subreddit"
+        type: "shell"
+        params:
+          cmd: |-
+            entitle $ESPANSO_LINK | sed -e 's|r/|reddit/|; s| -.*||;'

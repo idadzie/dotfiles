@@ -1,0 +1,41 @@
+name: youtube
+parent: generic
+
+matches:
+  - trigger: "--y"
+    replace: "[[YouTube/{{title}}]]"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "link"
+        type: "shell"
+        params:
+          cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's/[?|&]list=.*//g'"
+      - name: "title"
+        type: "shell"
+        params:
+          cmd: "entitle $ESPANSO_LINK"
+
+  - trigger: ":y"
+    replace: |-
+      - type:: youtube
+        channel::
+        tags::
+        recommended_by::
+      - {{youtube {{link}}}}
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: "link"
+        type: "shell"
+        params:
+          cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's/[?|&]list=.*//g'"
+
+  - trigger: ":cha"
+    replace: |-
+      - url:: [@YouTube]({{clipboard}})
+        type:: channel
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+
