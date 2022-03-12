@@ -21,6 +21,7 @@ matches:
       - type:: youtube
         channel::
         tags::
+        alias:: {{videoid}}
         recommended_by::
       - {{youtube {{link}}}}
     vars:
@@ -30,6 +31,11 @@ matches:
         type: "shell"
         params:
           cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's/[?|&]list=.*//g'"
+      - name: "videoid"
+        type: "shell"
+        params:
+          cmd: |-
+            [[ "$ESPANSO_CLIPBOARD" =~ "watch?v" ]] && echo $ESPANSO_CLIPBOARD | sed -e 's/.*?v=//; s/[?|&]list=.*//' || echo $ESPANSO_CLIPBOARD | sed -e 's%.*be/%%'
 
   - trigger: ":cha"
     replace: |-
