@@ -21,6 +21,7 @@ matches:
         type:: anime
         genre::
         tags::
+        season::
         url::
         release::
         recommended_by::
