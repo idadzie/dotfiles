@@ -2,6 +2,9 @@ filter_class: "Logseq"
 backend: Clipboard
 
 matches:
+  - trigger: "--ra"
+    replace: "{{rating $|$}}"
+
   - trigger: "!backlog"
     replace: |
       - #+BEGIN_QUERY
