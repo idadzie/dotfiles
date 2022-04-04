@@ -24,6 +24,9 @@ matches:
         published::
         recommended_by::
         digested::
+      - **What brought me here?**
+      - **TLDR**
+      - **Notes**
     vars:
       - name: "clipboard"
         type: "clipboard"
