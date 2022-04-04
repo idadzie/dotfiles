@@ -113,8 +113,8 @@ matches:
         type:: issue
         status::
         author::
-        created::
-        closed::
+        create_date::
+        close_date::
         tags:: {{remote}}
     vars:
       - name: "url"
@@ -143,9 +143,9 @@ matches:
         type:: pull-request
         status::
         author::
-        created::
-        closed::
-        merged::
+        create_date::
+        close_date::
+        merge_date::
         tags:: {{remote}}
     vars:
       - name: "url"

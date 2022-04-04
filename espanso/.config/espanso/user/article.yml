@@ -21,7 +21,7 @@ matches:
         author::
         year:: [[{{year}}]]
         publisher::
-        published::
+        publish_date::
         recommended_by::
         digested::
       - **What brought me here?**

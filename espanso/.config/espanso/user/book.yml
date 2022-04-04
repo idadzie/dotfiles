@@ -26,8 +26,8 @@ matches:
         author::
         url::
         recommended_by::
-        start::
-        end::
+        start_date::
+        end_date::
         rating:: TBD
         digested::
       - Quotes

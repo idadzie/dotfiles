@@ -22,8 +22,8 @@ matches:
       instructor::
       source::
       recommended_by::
-      start:: [[{{today}}]]
-      end::
+      start_date:: [[{{today}}]]
+      end_date::
     vars:
       - name: "clipboard"
         type: "clipboard"
