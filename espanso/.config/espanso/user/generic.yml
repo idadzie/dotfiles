@@ -125,4 +125,4 @@ matches:
       - name: "output"
         type: "shell"
         params:
-          cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's/[][]//g'"
+          cmd: "echo $ESPANSO_CLIPBOARD | sed -e 's/[][]//g; s/- //g'"
