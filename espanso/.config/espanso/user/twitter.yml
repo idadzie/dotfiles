@@ -4,9 +4,8 @@ parent: default
 matches:
   - trigger: "@t"
     replace: |
-      - The tweet.
+      - Tweet embed
         - {{tweet {{clipboard}}}}
-      - Screenshot of tweet.
     vars:
       - name: "clipboard"
         type: "clipboard"
