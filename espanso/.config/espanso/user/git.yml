@@ -9,6 +9,8 @@ matches:
         type:: repository
         tags:: GitHub
         created_by::
+        languages::
+        source::
         recommended_by::
       - **Description**
         - {{description}}
@@ -28,6 +30,8 @@ matches:
         type:: repository
         tags:: GitLab
         created_by:: [[{{creator}}]]
+        languages::
+        source::
         recommended_by::
       - **Description**
         - {{description}}
@@ -88,7 +92,7 @@ matches:
         type: "shell"
         params:
           cmd: |-
-            xidel -s $ESPANSO_URL --extract "css('meta[name=\"description\"]')/@content" | sed -e 's|\s-.*||g'
+            xidel -s $ESPANSO_URL --extract "css('meta[name=\"description\"]')/@content" | sed -e 's|\s-.*||g; s|\..*has.*Follow.*|.|g'
       - name: "remote"
         type: "shell"
         params:
@@ -198,7 +202,7 @@ matches:
         type: "shell"
         params:
           cmd: |-
-            xidel -s $ESPANSO_URL --extract "css('meta[name=\"description\"]')/@content" | sed -e 's|\s-.*||g'
+            xidel -s $ESPANSO_URL --extract "css('meta[name=\"description\"]')/@content" | sed -e 's|\s-.*||g; s|\..*has.*Follow.*|.|g'
       - name: "remote"
         type: "shell"
         params:

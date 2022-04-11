@@ -25,6 +25,7 @@ matches:
         icon:: 📖
         author::
         url::
+        source::
         recommended_by::
         start_date::
         end_date::
