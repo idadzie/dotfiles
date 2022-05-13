@@ -64,7 +64,7 @@ acousticbrainz:
 plugins:
   - acousticbrainz
   # - bandcamp
-  - beatport
+  # - beatport
   - deezer
   # - discogs
   - edit
