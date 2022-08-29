@@ -1,5 +1,9 @@
-# Update repositories of debian based distributions.
+# Update repositories of Debian based distributions.
 
 (( $+commands[apt] )) || return 0
 
-sudo apt update && apt list --upgradable
+if (( $+commands[nala] )); then
+  sudo nala update && nala list --upgradable
+else
+  sudo apt update && apt list --upgradable
+fi
