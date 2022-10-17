@@ -57,7 +57,7 @@ zinit as'null' from'gh-r' lucid for \
   mv'shfmt* -> shfmt' sbin @mvdan/sh \
   mv'countdown* -> countdown' sbin antonmedv/countdown \
   mv"direnv* -> direnv" atload'eval "$(direnv hook zsh)"' sbin direnv/direnv \
-  sbin junegunn/fzf-bin
+  sbin junegunn/fzf
 
 zinit from'gh-r' lucid for \
   mv'ghq* -> ghq' sbin'ghq/ghq' x-motemen/ghq \
