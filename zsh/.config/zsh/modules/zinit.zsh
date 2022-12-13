@@ -119,9 +119,9 @@ zinit ice wait'1' lucid as'completion' \
   id-as'beet-completion' mv'beet-completion -> _beet'
 zinit snippet 'https://github.com/beetbox/beets/blob/master/extra/_beet'
 
-zinit ice wait'1' lucid as'completion' \
-  id-as'docker-compose-completion' mv'docker-compose-completion -> _docker-compose'
-zinit snippet 'https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose'
+# zinit ice wait'1' lucid as'completion' \
+#   id-as'docker-compose-completion' mv'docker-compose-completion -> _docker-compose'
+# zinit snippet 'https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose'
 
 zinit ice wait'1' lucid as'completion' has'exiftool' \
   id-as'exiftool-completion' mv'exiftool-completion -> _exiftool'
