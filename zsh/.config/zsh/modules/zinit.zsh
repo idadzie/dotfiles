@@ -54,8 +54,12 @@ zinit as'null' from'gh-r' lucid for \
   mv'exa* -> exa' sbin'**/exa' ogham/exa \
   mv'jq* -> jq' sbin stedolan/jq \
   mv'shfmt* -> shfmt' sbin @mvdan/sh \
-  mv'countdown* -> countdown' sbin antonmedv/countdown \
-  sbin junegunn/fzf
+  mv'countdown* -> countdown' sbin antonmedv/countdown
+
+zi for \
+    from'gh-r' \
+    sbin'fzf'  \
+  junegunn/fzf
 
 zi for \
     as"program" \
