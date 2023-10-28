@@ -408,3 +408,7 @@ zsdoc/data
 
 # mrbob
 .mrbob.ini
+
+# Odoo config
+.odoorc
+odoo.cfg
