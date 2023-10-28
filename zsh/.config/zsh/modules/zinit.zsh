@@ -52,7 +52,7 @@ zinit as'null' wait lucid light-mode for \
 
 zinit as'null' from'gh-r' lucid for \
   mv'exa* -> exa' sbin'**/exa' ogham/exa \
-  mv'jq* -> jq' sbin stedolan/jq \
+  mv'jq* -> jq' sbin jqlang/jq \
   mv'shfmt* -> shfmt' sbin @mvdan/sh \
   mv'countdown* -> countdown' ver'v1.0.0' sbin antonmedv/countdown
 
