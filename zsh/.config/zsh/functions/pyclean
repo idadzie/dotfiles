@@ -1,3 +1,3 @@
-# Remove py[cod] files and __pychache__ directory.
+# Remove py[cod] files, __pycache__ & .ruff_cache directory.
 
-find . | grep -E "(__pycache__|\.pytest_cache|\.py[cod]$)" | xargs rm -rf
+find . | grep -E "(__pycache__|\.ruff_cache|\.pytest_cache|\.py[cod]$)" | xargs rm -rf
