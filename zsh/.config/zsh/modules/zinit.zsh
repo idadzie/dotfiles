@@ -144,7 +144,7 @@ zinit wait'1' as'completion' id-as'gh-completion' lucid for \
 
 # Theme
 if [[ "$ZSH_THEME" == "p10k" ]]; then
-  zinit ice atload'[[ -f $ZDOTDIR/.p10k.zsh ]] && source $ZDOTDIR/.p10k.zsh || true; _p9k_precmd' \
+  zinit ice atload'[[ -f $ZDOTDIR/.p10k.zsh ]] && source $ZDOTDIR/.p10k.zsh || true; _p9k_precmd' depth'1' \
     lucid nocd
   zinit load romkatv/powerlevel10k
 fi
