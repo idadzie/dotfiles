@@ -79,7 +79,7 @@ zinit from'gh-r' lucid for \
     atclone'cp **/*.1 $ZPFX/share/man/man1' atpull'%atclone' @sharkdp/bat
 
 zinit wait lucid for \
-  src'completions/git-forgit.zsh' wfxr/forgit \
+  wfxr/forgit \
   sbin'bin/anyenv' \
     atload'export ANYENV_ROOT=$XDG_DATA_HOME/anyenv; eval "$(anyenv init -)"' anyenv/anyenv
 
