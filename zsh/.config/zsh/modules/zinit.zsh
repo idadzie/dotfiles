@@ -75,8 +75,6 @@ zinit from'gh-r' lucid for \
   mv'pastel* -> pastel' sbin'pastel/pastel' @sharkdp/pastel \
   mv'fd* -> fd' sbin'fd/fd' \
     atclone'cp **/*.1 $ZPFX/share/man/man1' atpull'%atclone' @sharkdp/fd \
-  mv'bat* -> bat' sbin'bat/bat' \
-    atclone'cp **/*.1 $ZPFX/share/man/man1' atpull'%atclone' @sharkdp/bat
 
 zinit wait lucid for \
   wfxr/forgit \
