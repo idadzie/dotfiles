@@ -64,6 +64,8 @@ export FZF_CTRL_T_OPTS='
 # Set clipboard command.
 if (( $+commands[xclip] )); then
   __FZF[CPCMD]='xclip -selection clipboard'
+elif (( $+commands[wl-copy] )); then
+  __FZF[CPCMD]='wl-copy'
 elif (( $+commands[xsel] )); then
   __FZF[CPCMD]='xsel --clipboard --input'
 elif [[ "$OSTYPE" == darwin* ]]; then
