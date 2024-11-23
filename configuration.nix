@@ -152,6 +152,7 @@
     killall
     kitty
     kitty-themes
+    meld
     pdfgrep
     rsync
     starship
