@@ -1,0 +1,55 @@
+# Resize an application window.
+
+if (( ! $+commands[xdotool] )) || (( ! $+commands[xdpyinfo] )); then
+  echo 'Install xdotool & xdpyinfo to use this.' && return 0
+fi
+
+self=$0
+usage() {
+  command cat << HELP
+Usage: $self [OPTION] [WINDOW NAME] width height
+
+Set the size of a window with the given name.
+Any window matching the given name will also be resized.
+Width and height are relative to the geometry of the screen.
+
+Option:
+  -c, --center  Center all matching window(s)
+HELP
+}
+
+if [[ $# -lt 3 ]]; then
+  usage && return 1
+fi
+
+declare -a display_info display_dimension
+display_info=( ${(f)"$(command xdpyinfo)"} )
+display_dimension=( ${(M)display_info:#(#i)*dimensions:*} )
+display_dimension=( ${${(s: :)display_dimension}[2]} )
+display_dimension=( ${(@s/x/)display_dimension} )
+
+local display_width display_height
+display_width=${display_dimension[1]}
+display_height=${display_dimension[2]}
+
+declare -a windows
+
+if [[ "$1" == "-c" ]] || [[ "$1" == "--center" ]]; then
+  shift
+
+  windows=$(command xdotool search --onlyvisible --class $1)
+  windows=( ${(f)windows} )
+  posX=$(($display_width/2-$2/2))
+  posY=$(($display_height/2-$3/2))
+
+  for window in $windows; do
+    xdotool windowsize $window $2 $3
+    xdotool windowmove $window $posX $posY
+  done
+else
+  windows=$(command xdotool search --onlyvisible --class $1)
+  windows=( ${(f)windows} )
+  for window in $windows; do
+    xdotool windowsize $window $2 $3
+  done
+fi

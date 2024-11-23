@@ -1,0 +1,45 @@
+# vim:noexpandtab:ft=gitconfig
+
+[core]
+    editor = $EDITOR
+    quotepath = false
+    pager = diff-so-fancy | less --tabs=4 -RFXi
+    whitespace=fix,space-before-tab,tab-in-indent,trailing-space,cr-at-eol
+[merge]
+    tool = meld
+[mergetool "meld"]
+    trustExitCode = false
+    hasOutput = true
+[push]
+    default = simple
+[rebase]
+    autoStash = true
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[commit]
+    template = template
+[color]
+    ui = true
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+[color "diff"]
+    meta = yellow
+    frag = magenta bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[diff-so-fancy]
+    markEmptyLines = false
+[init]
+    defaultBranch = main
+[ghq]
+    root = ~/Code
+[include]
+    path = config-nix
+    path = local

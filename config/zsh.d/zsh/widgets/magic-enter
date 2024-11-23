@@ -1,0 +1,32 @@
+# Bind quick stuff to enter!
+
+# Pressing enter in a git directory runs `git status`
+# in other directories `ls`
+
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/magic-enter/magic-enter.plugin.zsh
+
+# If commands are not already set, use the defaults
+[ -z "$MAGIC_ENTER_GIT_COMMAND" ] && MAGIC_ENTER_GIT_COMMAND="git status -u ."
+[ -z "$MAGIC_ENTER_OTHER_COMMAND" ] && MAGIC_ENTER_OTHER_COMMAND="ls -lh ."
+
+if [[ -z $BUFFER ]]; then
+  echo ""
+  if git rev-parse --is-inside-work-tree &> /dev/null; then
+    eval "$MAGIC_ENTER_GIT_COMMAND"
+  else
+    eval "$MAGIC_ENTER_OTHER_COMMAND"
+  fi
+
+  if [[ $ZSH_THEME == "p10k" ]]; then
+    # 'zle redisplay' (when using p10k theme)
+    # deletes output (previous line) of the last
+    # command before rendering prompt.
+    # Just gave it a line to delete. :D
+    echo ""
+    echo ""
+  fi
+
+  zle redisplay
+else
+  zle accept-line
+fi

@@ -1,0 +1,29 @@
+# Open *.
+
+emulate -L zsh
+setopt localoptions shwordsplit
+
+local open
+case "$OSTYPE" in
+  (linux*) open='xdg-open'                              ;;
+  (darwin*) open='open'                                 ;;
+  (cygwin*) open='cygstart'                             ;;
+  (msys*) open='start ""'                               ;;
+  (*) echo "Platform $OSTYPE not supported" && return 1 ;;
+esac
+
+# Open as URL when direct open fails.
+# Useful when opening URLs without 'http://' prefix
+if [[ "$OSTYPE" == darwin* ]]; then
+  if [[ $# -gt 0 ]]; then
+    "$open" "$@" &>/dev/null || "$open" "http://$@" &>/dev/null
+  else
+    "$open" . &>/dev/null
+  fi
+else
+  if [[ $# -gt 0 ]]; then
+    nohup "$open" "$@" &>/dev/null || nohup "$open" "http://$@" &>/dev/null
+  else
+    nohup "$open" . &>/dev/null
+  fi
+fi

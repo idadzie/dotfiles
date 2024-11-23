@@ -1,0 +1,7 @@
+# Clone git repositories with ghq.
+
+if (( ! $+commands[ghq] )); then
+  echo 'Install ghq to use this.' && return 0
+fi
+
+ghq get -u -p "$@"

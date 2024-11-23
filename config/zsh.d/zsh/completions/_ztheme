@@ -1,0 +1,3 @@
+#compdef ztheme
+
+compadd p10k fishy

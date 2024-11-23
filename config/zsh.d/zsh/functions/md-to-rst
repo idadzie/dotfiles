@@ -1,0 +1,7 @@
+# Change markdown files to restructured text.
+
+if (( ! $+commands[pandoc] )); then
+  echo 'Install pandoc to use this.' && return 0
+fi
+
+pandoc --from=markdown --to=rst --output="$1.rst" "$1.md"

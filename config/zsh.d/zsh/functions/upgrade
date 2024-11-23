@@ -1,0 +1,12 @@
+# Upgrade Debian based distributions.
+
+(( $+commands[apt] )) || return 0
+
+if (( $+commands[nala] )); then
+  # nala automatically updates the mirrors :D
+  sudo nala upgrade -y
+elif (( $+commands[apt-fast] )); then
+  sudo apt-fast update && sudo apt-fast upgrade -y
+else
+  sudo apt update && sudo apt upgrade -y
+fi

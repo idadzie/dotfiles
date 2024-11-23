@@ -1,0 +1,25 @@
+# Change directory to ghq managed repository using fzf.
+
+emulate -L zsh
+
+if (( ! $+commands[fzf] )) && (( ! $+commands[ghq] )); then
+  return 1
+fi
+
+local repository opts
+
+opts="
+$FZF_DEFAULT_OPTS
+-0 --ansi --select-1 --height 70%
+--no-preview --delimiter=/ --nth=2,3,4,5
+--extended-exact --bind='ctrl-s:toggle-sort'
+"
+
+repository=$(ghq list | FZF_DEFAULT_OPTS="$opts" fzf)
+
+if [[ -n "$repository" ]]; then
+  repository=$(ghq list -e -p $repository)
+  zle autosuggest-suspend
+  BUFFER="cd -- $repository"
+  zle accept-line
+fi
