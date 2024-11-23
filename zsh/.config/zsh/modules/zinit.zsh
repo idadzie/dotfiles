@@ -60,14 +60,14 @@ zi for \
     sbin'fzf'  \
   junegunn/fzf
 
-zi for \
-    as"program" \
-    atclone'./direnv hook zsh > zhook.zsh' \
-    from"gh-r" \
-    light-mode \
-    mv"direnv* -> direnv" \
-    src'zhook.zsh' \
-  direnv/direnv
+#zi for \
+#    as"program" \
+#    atclone'./direnv hook zsh > zhook.zsh' \
+#    from"gh-r" \
+#    light-mode \
+#    mv"direnv* -> direnv" \
+#    src'zhook.zsh' \
+#  direnv/direnv
 
 zinit from'gh-r' lucid for \
   mv'ghq* -> ghq' sbin'ghq/ghq' x-motemen/ghq \
