@@ -194,6 +194,9 @@
     libreoffice
 
     # Programming (Rust)
+    ruby_3_3
+
+    # Programming (Rust)
     ncurses                             # Library to create Text User Interfaces
     rustup                              # Rust toolchain manager
     cargo                               # Rust package manager
