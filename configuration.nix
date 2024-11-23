@@ -131,6 +131,8 @@
     enable = true;
     package = pkgs.postgresql_15;
   };
+  # direnv
+  programs.direnv.enable = true;
 
   # nix-ld
   programs.nix-ld.enable = true;
