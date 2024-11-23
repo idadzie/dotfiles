@@ -75,10 +75,13 @@ zinit from'gh-r' lucid for \
   mv'fd* -> fd' sbin'fd/fd' \
     atclone'cp **/*.1 $ZPFX/share/man/man1' atpull'%atclone' @sharkdp/fd \
 
+#zinit wait lucid for \
+#  wfxr/forgit \
+#  sbin'bin/anyenv' \
+#    atload'export ANYENV_ROOT=$XDG_DATA_HOME/anyenv; eval "$(anyenv init -)"' anyenv/anyenv
+
 zinit wait lucid for \
-  wfxr/forgit \
-  sbin'bin/anyenv' \
-    atload'export ANYENV_ROOT=$XDG_DATA_HOME/anyenv; eval "$(anyenv init -)"' anyenv/anyenv
+  wfxr/forgit
 
 zinit as'null' wait lucid light-mode for \
   id-as'sdkman' run-atpull \
