@@ -28,8 +28,8 @@
   users.defaultUserShell = pkgs.zsh;
 
   nix = {
-    use-xdg-base-directories = true;
-    useDaemon = true;
+    settings.useXdgBaseDirectories = true;
+    settings.useDaemon = true;
     gc = {dates = "daily";};
     autoOptimiseStore = true;
     registry = {

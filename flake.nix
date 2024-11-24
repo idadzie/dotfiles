@@ -57,6 +57,7 @@
     ...
   } @ inputs: let
     darwinHosts = {
+      "glassware" =  "aarch64-darwin";
     };
 
     darwinSystems = inputs.nixpkgs.lib.unique (inputs.nixpkgs.lib.attrValues darwinHosts);
@@ -264,6 +265,6 @@
     # vs
     # nix build './#pandoras-box'
     # Move them to `outputs.packages.<system>.name`
-    (host: _: self.darwinConfigurations.${host}.system)
-    darwinHosts;
+    (host: _: self.nixosConfigurations.${host}.system)
+    linuxHosts;
 }
