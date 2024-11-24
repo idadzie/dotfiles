@@ -18,20 +18,14 @@
     user = {
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel"];
-      modules = {
-        youtube-dl.enable = true;
-        discord.enable = true;
-      };
     };
   };
 
   users.defaultUserShell = pkgs.zsh;
 
   nix = {
-    settings.useXdgBaseDirectories = true;
-    settings.useDaemon = true;
+    settings.auto-optimise-store =  true;
     gc = {dates = "daily";};
-    autoOptimiseStore = true;
     registry = {
       nixos.flake = inputs.nixpkgs;
       nixpkgs.flake = inputs.nixpkgs;
@@ -83,6 +77,10 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
+  
+  hardware.nvidia = {
+      open = true;
+    };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -124,8 +122,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    bat
-    eza
     feh
     ffmpeg-full
     git

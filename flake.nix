@@ -57,7 +57,7 @@
     ...
   } @ inputs: let
     darwinHosts = {
-      "glassware" =  "aarch64-darwin";
+      "glassware" = "aarch64-darwin";
     };
 
     darwinSystems = inputs.nixpkgs.lib.unique (inputs.nixpkgs.lib.attrValues darwinHosts);
@@ -82,11 +82,11 @@
       nix = {
         # Disable channels since we are using flakes
         channel.enable = false;
-        nixPath = {
-          inherit (inputs) nixpkgs;
-          inherit (inputs) darwin;
-          inherit (inputs) home-manager;
-        };
+        #nixPath = {
+        #  inherit (inputs) nixpkgs;
+        #  inherit (inputs) darwin;
+        #  inherit (inputs) home-manager;
+        #};
         package = pkgs.nix;
         settings = {
           trusted-users = ["@admin"];
@@ -130,21 +130,18 @@
         packages = with pkgs;
           [
             inter
-            dina-font
-            roboto
-            ubuntu_font_family
           ]
           ++ (lib.optionals
             pkgs.stdenv.isLinux [
               noto-fonts
-              noto-fonts-cjk
+              noto-fonts-cjk-sans
               noto-fonts-emoji
-              fira-code
+              liberation_ttf
               fira-code-symbols
-              mplus-outline-fonts
               dina-font
               proggyfonts
-              mplus-outline-fonts.githubRelease
+              roboto
+              ubuntu_font_family
               (nerdfonts.override {fonts = ["JetBrainsMono" "RobotoMono" "UbuntuMono"];})
             ]);
       };

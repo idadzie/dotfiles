@@ -70,10 +70,13 @@ in {
             )
             ++ [
               ast-grep
+              alejandra
+              bat
               cachix
               curl
               direnv
               diskonaut
+              eza
               fzf
               # grc
               htop
@@ -81,10 +84,10 @@ in {
               jq
               nix-direnv
               pandoc
-              # ripgrep
-              # rsync
-              # wget
-              # zoxide
+              ripgrep
+              rsync
+              wget
+              zoxide
               zsh-powerlevel10k
             ];
         };
@@ -93,17 +96,11 @@ in {
           user = {
             shell = pkgs.zsh;
             packages = with pkgs; [
-              _1password # CLI
-              # bat
               # buku
               # difftastic
               # emanote # Only aarch64-darwin
-              # eza
-              # fd
-              # ffmpeg
               glow
               gum # https://github.com/charmbracelet/gum
-              hcron
               mods # https://github.com/charmbracelet/mods
               rename
               scc
@@ -196,7 +193,7 @@ in {
           shellInit =
             lib.concatStringsSep "\n"
             (map builtins.readFile [
-              ../../../config/zsh./.zshenv
+              ../../../config/zsh.d/.zshenv
             ]);
 
           # zshrc
@@ -216,18 +213,18 @@ in {
                 ''
               ]
               ++ map builtins.readFile [
-                ../../../config/zsh.d/zsh/config/paths.zsh
-                ../../../config/zsh.d/zsh/config/term.zsh
-                ../../../config/zsh.d/zsh/config/theme.zsh
-                ../../../config/zsh.d/zsh/config/keymap.zsh
-                ../../../config/zsh.d/zsh/config/widgets.zsh
-                ../../../config/zsh.d/zsh/config/env.zsh
-                ../../../config/zsh.d/zsh/config/options.zsh
-                ../../../config/zsh.d/zsh/config/completion.zsh
-                ../../../config/zsh.d/zsh/config/history.zsh
-                ../../../config/zsh.d/zsh/config/window.zsh
-                ../../../config/zsh.d/zsh/config/zinit.zsh
-                ../../../config/zsh.d/zsh/config/aliases.zsh
+                ../../../config/zsh.d/zsh/modules/paths.zsh
+                ../../../config/zsh.d/zsh/modules/term.zsh
+                ../../../config/zsh.d/zsh/modules/theme.zsh
+                ../../../config/zsh.d/zsh/modules/keymap.zsh
+                ../../../config/zsh.d/zsh/modules/widgets.zsh
+                ../../../config/zsh.d/zsh/modules/env.zsh
+                ../../../config/zsh.d/zsh/modules/options.zsh
+                ../../../config/zsh.d/zsh/modules/completion.zsh
+                ../../../config/zsh.d/zsh/modules/history.zsh
+                ../../../config/zsh.d/zsh/modules/window.zsh
+                ../../../config/zsh.d/zsh/modules/zinit.zsh
+                ../../../config/zsh.d/zsh/modules/aliases.zsh
                 # "${pkgs.grc}/etc/grc.zsh"
                 "${pkgs.fzf}/share/fzf/completion.zsh"
                 "${pkgs.fzf}/share/fzf/key-bindings.zsh"
