@@ -127,10 +127,12 @@
     git
     killall
     kitty
+    lshw
     meld
     pdfgrep
     rsync
     stow
+    usbutils
     wget
     xclip
     xdotool
