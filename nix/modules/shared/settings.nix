@@ -80,7 +80,7 @@ in {
     users.users."${config.my.username}" = mkAliasDefinitions options.my.user;
     my.user = {
       inherit home;
-      description = "Primary user account";
+      description = "${config.my.name}";
     };
 
     my.hostConfigHome = "${config.my.hm.dataHome}/${config.networking.hostName}";
