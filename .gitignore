@@ -31,3 +31,4 @@ zsdoc/data
 # local environment files
 *.local
 
+.direnv
