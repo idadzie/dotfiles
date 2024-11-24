@@ -126,6 +126,7 @@
     ffmpeg-full
     git
     killall
+    kitty
     meld
     pdfgrep
     rsync
