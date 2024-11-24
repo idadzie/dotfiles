@@ -24,7 +24,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   nix = {
-    settings.auto-optimise-store =  true;
+    settings.auto-optimise-store = true;
     gc = {dates = "daily";};
     registry = {
       nixos.flake = inputs.nixpkgs;
@@ -77,10 +77,10 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
-  
+
   hardware.nvidia = {
-      open = true;
-    };
+    open = true;
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

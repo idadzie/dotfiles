@@ -1,5 +1,5 @@
 _: {
-  networking = { hostName = "glassware"; };
+  networking = {hostName = "glassware";};
 
   homebrew = {
     casks = [
@@ -8,4 +8,3 @@ _: {
     ];
   };
 }
-
