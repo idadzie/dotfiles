@@ -89,7 +89,7 @@
         #};
         package = pkgs.nix;
         settings = {
-          trusted-users = ["@admin"];
+          trusted-users = ["@sudo" "@admin"];
           experimental-features = [
             "nix-command"
             "flakes"
