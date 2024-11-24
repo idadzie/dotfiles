@@ -48,7 +48,7 @@
     };
 
     # Extras
-    # nixos-hardware.url = "github:nixos/nixos-hardware";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
   };
 
   outputs = {

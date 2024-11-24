@@ -9,6 +9,7 @@
   ...
 }: {
   imports = [
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-p1-gen3
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
