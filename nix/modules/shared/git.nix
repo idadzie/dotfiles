@@ -35,14 +35,14 @@ in {
             [user]
             ${optionalString (name != "") "  name = ${name}"}
             ${optionalString (email != "") "  email = ${email}"}
-            useconfigonly = true
+              useconfigonly = true
 
             ${optionalString (github_username != "") ''
               [github]
-                 username = ${github_username}''}
+                username = ${github_username}''}
 
             [diff "exif"]
-                textconv = ${pkgs.exiftool}/bin/exiftool
+              textconv = ${pkgs.exiftool}/bin/exiftool
           '';
         };
 
