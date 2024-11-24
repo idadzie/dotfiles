@@ -224,7 +224,6 @@ in {
                 ../../../config/zsh.d/zsh/modules/history.zsh
                 ../../../config/zsh.d/zsh/modules/window.zsh
                 ../../../config/zsh.d/zsh/modules/zinit.zsh
-                ../../../config/zsh.d/zsh/modules/aliases.zsh
                 # "${pkgs.grc}/etc/grc.zsh"
                 "${pkgs.fzf}/share/fzf/completion.zsh"
                 "${pkgs.fzf}/share/fzf/key-bindings.zsh"
