@@ -9,7 +9,6 @@
   ...
 }: {
   imports = [
-    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-p1-gen3
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
@@ -72,15 +71,9 @@
     xkb.layout = "us";
     xkb.variant = "";
 
-    videoDrivers = ["nvidia"];
-
     # Enable the GNOME Desktop Environment.
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-  };
-
-  hardware.nvidia = {
-    open = true;
   };
 
   # Enable CUPS to print documents.
