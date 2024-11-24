@@ -1,8 +1,0 @@
-# Return true if running OS is Macintosh.
-
-osdetect
-if [[ "$PLATFORM" == 'osx' ]]; then
-  return 0
-else
-  return 1
-fi

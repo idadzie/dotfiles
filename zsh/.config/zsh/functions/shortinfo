@@ -1,8 +1,0 @@
-# Display short summary for video file metadata.
-
-if (( ! $+commands[mediainfo] )); then
-  echo 'Install mediainfo to use this.' && return 0
-fi
-
-echo
-mediainfo --Output=$'General;File .......... %FileName%\\nDuration ...... %Duration/String3%\\nFile size ..... %FileSize/String3%\\n\nVideo;Resolution .... %Width%x%Height%\\nCodec ......... %CodecID%\\n\nAudio;Audio ......... %Language/String% %Title%\\n\nText;Subtitle ...... %Language/String% %Title%\\n' "$@"

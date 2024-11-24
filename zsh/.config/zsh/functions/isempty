@@ -1,5 +1,0 @@
-if [[ -z $(command ls -A -- "$@") ]]; then
-  echo -e "Empty"
-else
-  echo -e "Not Empty"
-fi

@@ -1,8 +1,0 @@
-# Return true if running OS is GNU/Linux.
-
-osdetect
-if [[ "$PLATFORM" == 'linux' ]]; then
-  return 0
-else
-  return 1
-fi

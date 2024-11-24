@@ -1,3 +1,0 @@
-# Identify application/service running on a port.
-
-lsof -i tcp:$1

@@ -1,9 +1,0 @@
-# Export the PLATFORM.
-
-export PLATFORM
-case "$(ostype)" in
-  *'linux'*)  PLATFORM='linux'   ;;
-  *'darwin'*) PLATFORM='osx'     ;;
-  *'bsd'*)    PLATFORM='bsd'     ;;
-  *)          PLATFORM='unknown' ;;
-esac

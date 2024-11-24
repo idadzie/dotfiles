@@ -1,4 +1,0 @@
-# Move nested directory items to working directory.
-
-# find . -type f -exec mv -n {} . \; &> /dev/null
-mv **/*(.) . &> /dev/null

@@ -1,3 +1,0 @@
-# Return machine architecture.
-
-echo $(uname -m)

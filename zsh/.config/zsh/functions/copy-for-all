@@ -1,5 +1,0 @@
-# Copy files for all directories in the current working directory.
-
-foreach directory (**/)
-  cp "$@" "$directory"
-end
