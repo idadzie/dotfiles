@@ -19,7 +19,7 @@
 [difftool]
     prompt = false
 [commit]
-    template = template
+    template = ~/.config/git/template
 [color]
     ui = true
 [color "diff-highlight"]
@@ -41,5 +41,5 @@
 [ghq]
     root = ~/Code
 [include]
-    path = config-nix
-    path = local
+    path = ~/.config/git/config-nix
+    path = ~/.config/git/local
