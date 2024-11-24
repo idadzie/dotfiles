@@ -120,7 +120,6 @@
     ffmpeg-full
     git
     killall
-    kitty
     lshw
     meld
     pdfgrep
