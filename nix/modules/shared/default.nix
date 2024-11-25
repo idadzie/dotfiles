@@ -14,6 +14,7 @@
     ./ripgrep.nix
     ./tmux.nix
     ./misc.nix
+    ./node.nix
     ./vim.nix
     ./gui.nix
     ./go.nix
@@ -31,6 +32,7 @@
     ripgrep.enable = lib.mkDefault true;
     tmux.enable = lib.mkDefault true;
     misc.enable = lib.mkDefault true;
+    node.enable = lib.mkDefault true;
     vim.enable = lib.mkDefault true;
     gui.enable = lib.mkDefault true;
     go.enable = lib.mkDefault true;
