@@ -8,6 +8,7 @@
     ./shell.nix
     ./git.nix
     ./kitty.nix
+    ./bat.nix
     ./tmux.nix
   ];
 
@@ -16,6 +17,7 @@
     git.enable = lib.mkDefault true;
 
     kitty.enable = lib.mkDefault true;
+    bat.enable = lib.mkDefault true;
     tmux.enable = lib.mkDefault true;
   };
 }

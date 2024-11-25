@@ -71,7 +71,6 @@ in {
             ++ [
               ast-grep
               alejandra
-              bat
               cachix
               curl
               direnv
