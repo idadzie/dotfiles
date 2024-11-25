@@ -9,6 +9,7 @@ with config.my; let
   cfg = config.my.modules.vim;
   inherit (config.my.user) home;
   inherit (config.my) hm;
+  inherit (config.my) github_username;
 in {
   options = with lib; {
     my.modules.vim = {
@@ -73,11 +74,16 @@ in {
         ];
       };
 
-      my.hm.file = {
-        ".config/nvim" = {
-          recursive = true;
-          source = ../../../config/nvim;
-        };
-      };
+      system.activationScripts.postUserActivation.text = ''
+        echo ":: -> Running vim activationScript..."
+
+        # Handle mutable configs
+
+        if [ ! -e "${hm.configHome}/nvim/" ]; then
+          echo "Linking vim folders..."
+          ln -sf ${home}/Code/github.com/${github_username}/dotfiles/config/nvim ${hm.configHome}/nvim
+          chown -R ${config.my.username} ${hm.configHome}/nvim
+        fi
+      '';
     };
 }
