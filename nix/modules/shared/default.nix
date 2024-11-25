@@ -11,6 +11,7 @@
     ./bat.nix
     ./mpv.nix
     ./python.nix
+    ./ripgrep.nix
     ./tmux.nix
     ./go.nix
   ];
@@ -23,6 +24,7 @@
     bat.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
     python.enable = lib.mkDefault true;
+    ripgrep.enable = lib.mkDefault true;
     tmux.enable = lib.mkDefault true;
     go.enable = lib.mkDefault true;
   };
