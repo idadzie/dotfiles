@@ -13,6 +13,7 @@
     ./python.nix
     ./ripgrep.nix
     ./tmux.nix
+    ./misc.nix
     ./go.nix
   ];
 
@@ -26,6 +27,7 @@
     python.enable = lib.mkDefault true;
     ripgrep.enable = lib.mkDefault true;
     tmux.enable = lib.mkDefault true;
+    misc.enable = lib.mkDefault true;
     go.enable = lib.mkDefault true;
   };
 }
