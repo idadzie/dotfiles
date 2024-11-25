@@ -1,10 +1,6 @@
 #
 # Environment variables
 #
-
-# Editor
-export EDITOR='vim'
-
 # Pager
 export PAGER='less'
 
