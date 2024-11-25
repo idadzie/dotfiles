@@ -1,0 +1,12 @@
+# Save all videos under YouTube directory
+-o '~/Videos/YouTube/%(uploader)s/%(title)s [%(id)s].%(ext)s'
+
+--add-metadata
+
+# --write-description
+# --write-thumbnail
+
+# Save JSON metadata
+# --write-info-json
+# -o 'infojson:~/Videos/YouTube/%(uploader)s/%(title)s [%(id)s].%(ext)s'
+
