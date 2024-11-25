@@ -15,6 +15,7 @@
     ./tmux.nix
     ./misc.nix
     ./vim.nix
+    ./gui.nix
     ./go.nix
     ./yt-dlp.nix
   ];
@@ -31,6 +32,7 @@
     tmux.enable = lib.mkDefault true;
     misc.enable = lib.mkDefault true;
     vim.enable = lib.mkDefault true;
+    gui.enable = lib.mkDefault true;
     go.enable = lib.mkDefault true;
     yt-dlp.enable = lib.mkDefault true;
   };

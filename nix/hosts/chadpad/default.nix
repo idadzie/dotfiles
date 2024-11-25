@@ -151,17 +151,6 @@
     clang-manpages
     clang-tools
 
-    # IDEs
-    jetbrains.pycharm-professional
-
-    # Applications
-    inkscape
-    mpv
-    simplescreenrecorder
-    typora
-    gparted
-    libreoffice
-
     # Programming (Rust)
     ruby_3_3
 
