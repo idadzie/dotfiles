@@ -10,6 +10,7 @@
     ./kitty.nix
     ./bat.nix
     ./tmux.nix
+    ./go.nix
   ];
 
   my.modules = {
@@ -19,5 +20,6 @@
     kitty.enable = lib.mkDefault true;
     bat.enable = lib.mkDefault true;
     tmux.enable = lib.mkDefault true;
+    go.enable = lib.mkDefault true;
   };
 }
