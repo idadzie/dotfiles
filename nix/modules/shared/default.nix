@@ -16,6 +16,7 @@
     ./misc.nix
     ./vim.nix
     ./go.nix
+    ./yt-dlp.nix
   ];
 
   my.modules = {
@@ -31,5 +32,6 @@
     misc.enable = lib.mkDefault true;
     vim.enable = lib.mkDefault true;
     go.enable = lib.mkDefault true;
+    yt-dlp.enable = lib.mkDefault true;
   };
 }
