@@ -10,6 +10,7 @@
     ./kitty.nix
     ./bat.nix
     ./mpv.nix
+    ./python.nix
     ./tmux.nix
     ./go.nix
   ];
@@ -21,6 +22,7 @@
     kitty.enable = lib.mkDefault true;
     bat.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
+    python.enable = lib.mkDefault true;
     tmux.enable = lib.mkDefault true;
     go.enable = lib.mkDefault true;
   };
