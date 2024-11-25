@@ -192,6 +192,7 @@ in {
           shellInit =
             lib.concatStringsSep "\n"
             (map builtins.readFile [
+              ../../../config/zsh.d/zsh/modules/init.zsh
               ../../../config/zsh.d/.zshenv
             ]);
 
@@ -200,6 +201,9 @@ in {
             lib.concatStringsSep "\n"
             (
               [
+                (builtins.readFile ../../../config/zsh.d/zsh/modules/init.zsh)
+              ]
+              ++ [
                 ''
                   # Return if requirements are not found.
                   if [[ $${TERM} == 'dumb' ]]; then
