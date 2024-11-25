@@ -21,5 +21,15 @@ in {
         GOBIN = "${GOPATH}/bin";
         GOPRIVATE = "github.com/${config.my.github_username}/*,gitlab.com/${config.my.github_username}/*";
       };
+
+      my.user = {
+        packages = with pkgs; [
+          go
+          gopls
+          go-tools # staticcheck, etc...
+          gomodifytags
+          gotools # goimports
+        ];
+      };
     };
 }
