@@ -32,6 +32,7 @@ in {
         else {
           my.user = {
             packages = with pkgs; [
+              dbeaver-bin
               docker
               firefox
               gparted
