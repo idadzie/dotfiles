@@ -191,9 +191,6 @@
     # Install ZSH
     zsh.enable = true;
 
-    # Install firefox.
-    firefox.enable = true;
-
     # Install Neovim
     neovim = {
       enable = true;
