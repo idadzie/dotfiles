@@ -35,6 +35,7 @@ in {
               dbeaver-bin
               docker
               firefox
+              google-chrome
               gparted
               inkscape
               jetbrains.pycharm-professional
