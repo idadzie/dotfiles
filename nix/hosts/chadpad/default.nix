@@ -17,7 +17,7 @@
     # Define a user account. Don't forget to set a password with ‘passwd’.
     user = {
       isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "docker"];
     };
   };
 
@@ -231,6 +231,8 @@
     # nix-ld
     nix-ld.enable = true;
   };
+
+  virtualisation.docker.enable = true;
 
   # List services that you want to enable:
 
