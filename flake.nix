@@ -142,7 +142,7 @@
               proggyfonts
               roboto
               ubuntu_font_family
-              (nerdfonts.override {fonts = ["JetBrainsMono" "RobotoMono" "UbuntuMono"];})
+              (nerdfonts.override {fonts = ["JetBrainsMono" "RobotoMono" "UbuntuMono" "CascadiaCode"];})
             ]);
       };
 
