@@ -33,7 +33,6 @@ in {
           my.user = {
             packages = with pkgs; [
               dbeaver-bin
-              docker
               firefox
               google-chrome
               gparted
