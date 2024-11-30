@@ -147,6 +147,7 @@
     git
     killall
     lshw
+    lsof
     meld
     pdfgrep
     rsync
