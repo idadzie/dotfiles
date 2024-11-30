@@ -124,7 +124,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Install PostgreSQL
+  # Enable PostgreSQL
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_15;
@@ -222,10 +222,10 @@
 
     java.enable = true;
 
-    # Install ZSH
+    # Enable ZSH
     zsh.enable = true;
 
-    # Install Neovim
+    # Enable Neovim
     neovim = {
       enable = true;
       defaultEditor = true;
