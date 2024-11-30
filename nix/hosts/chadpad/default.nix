@@ -101,6 +101,7 @@
     settingsSha256 = "sha256-4B61Q4CxDqz/BwmDx6EOtuXV/MNJbaZX+hj/Szo1z1Q=";
     persistencedSha256 = "sha256-FXKOTLbjhoGbO3q6kRuRbHw2pVUkOYTbTX2hyL/az94=";
   };
+  hardware.nvidia-container-toolkit.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
