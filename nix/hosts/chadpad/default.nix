@@ -130,6 +130,13 @@
     package = pkgs.postgresql_15;
   };
 
+  # Enable Syncthing
+  services.syncthing = {
+    enable = true;
+    user = "${config.my.username}";
+    configDir = "/home/${config.my.username}/.config/syncthing";
+  };
+
   # Environment variables
   environment.sessionVariables = rec {
     # Not officially in the XDG specification
