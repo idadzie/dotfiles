@@ -43,6 +43,7 @@ in {
               signal-desktop
               simplescreenrecorder
               slack
+              sublime4
               typora
               vscode
               vscodium

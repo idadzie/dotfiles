@@ -36,6 +36,10 @@
     (import ./kitty-overlay.nix)
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w" # Introduced because of Sublime Text 4
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
