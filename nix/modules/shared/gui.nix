@@ -38,6 +38,7 @@ in {
               gparted
               inkscape
               jetbrains.pycharm-professional
+              keepassxc
               libreoffice
               mpv
               signal-desktop
