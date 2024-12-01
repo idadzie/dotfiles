@@ -32,6 +32,11 @@ in {
         else {
           my.user = {
             packages = with pkgs; [
+              bruno
+              cheese
+              collision
+              contrast
+              cozy
               dbeaver-bin
               firefox
               gnome-obfuscate
@@ -40,8 +45,11 @@ in {
               inkscape
               jetbrains.pycharm-professional
               keepassxc
+              kid3
               libreoffice
               mpv
+              mullvad-vpn
+              pdfarranger
               signal-desktop
               simplescreenrecorder
               slack
