@@ -34,6 +34,7 @@ in {
             packages = with pkgs; [
               dbeaver-bin
               firefox
+              gnome-obfuscate
               google-chrome
               gparted
               inkscape
