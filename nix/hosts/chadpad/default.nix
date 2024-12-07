@@ -163,6 +163,7 @@
     meld
     mosh
     pdfgrep
+    rclone
     rsync
     stow
     usbutils
