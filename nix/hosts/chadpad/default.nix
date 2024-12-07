@@ -161,6 +161,7 @@
     lshw
     lsof
     meld
+    mosh
     pdfgrep
     rsync
     stow
