@@ -54,6 +54,7 @@ in {
               simplescreenrecorder
               slack
               sublime4
+              transmission_4-gtk
               typora
               vscode
               vscodium
