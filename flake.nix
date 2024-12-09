@@ -234,6 +234,13 @@
       ))
       linuxHosts;
 
+    formatter = forAllSystems (
+      system: let
+        pkgs = inputs.nixpkgs.legacyPackages.${system};
+      in
+        pkgs.alejandra
+    );
+
     # @TODO: move the logic inside ./install here
     devShells = forAllSystems (system: let
       pkgs = inputs.nixpkgs.legacyPackages.${system};
@@ -254,7 +261,7 @@
     });
   in
     {
-      inherit darwinConfigurations nixosConfigurations devShells;
+      inherit darwinConfigurations nixosConfigurations devShells formatter;
     }
     // mapHosts
     # for convenience
