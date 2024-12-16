@@ -45,6 +45,9 @@ export FZF_DEFAULT_COMMAND="${__FZF[DEFAULT]}"
 export FZF_CTRL_T_COMMAND="${__FZF[CMD]}"
 export FZF_ALT_C_COMMAND="${__FZF[ALT_C]}"
 export FZF_DEFAULT_OPTS="\
+  --prompt='» '
+  --pointer='▶'
+  --marker='✓ '
   --min-height 30 \
   --height 50% \
   --reverse \
