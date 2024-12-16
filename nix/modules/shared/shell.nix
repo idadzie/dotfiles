@@ -14,7 +14,7 @@
   inherit (config.my.user) home;
   inherit (config.my) hm;
   inherit (config.my) hostConfigHome;
-  inherit (pkgs.stdenv) isDarwin isLinux;
+  inherit (pkgs.stdenv) isLinux;
 
   histfile = "${hm.stateHome}/zsh/history";
   zcachefile = "${hm.cacheHome}/z/.z";
@@ -97,7 +97,6 @@ in {
             packages = with pkgs; [
               # buku
               # difftastic
-              # emanote # Only aarch64-darwin
               glow
               gum # https://github.com/charmbracelet/gum
               mods # https://github.com/charmbracelet/mods
@@ -107,7 +106,6 @@ in {
               shfmt # Doesn't work with zsh, only sh & bash
               slides # CLI markdown presentation tool
               tokei
-              vivid
             ];
           };
 
