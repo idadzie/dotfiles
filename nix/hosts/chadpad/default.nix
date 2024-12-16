@@ -170,7 +170,6 @@
     wget
     xclip
     xdotool
-    zsh
 
     # Compression tools
     zip
@@ -228,9 +227,6 @@
     };
 
     java.enable = true;
-
-    # Enable ZSH
-    zsh.enable = true;
 
     # direnv
     direnv.enable = true;
