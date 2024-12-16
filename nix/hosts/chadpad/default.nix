@@ -232,14 +232,6 @@
     # Enable ZSH
     zsh.enable = true;
 
-    # Enable Neovim
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-    };
-
     # direnv
     direnv.enable = true;
 
