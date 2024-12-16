@@ -27,6 +27,7 @@ in {
               ]))
             ruff
             ruff-lsp
+            uv
           ];
         };
       };
