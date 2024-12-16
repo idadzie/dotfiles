@@ -24,6 +24,7 @@ in {
                 pip
                 setuptools
                 pynvim
+                debugpy
               ]))
             ruff
             ruff-lsp
