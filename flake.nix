@@ -262,6 +262,12 @@
   in
     {
       inherit darwinConfigurations nixosConfigurations devShells formatter;
+      templates = {
+        odoo15 = {
+          path = ./templates/odoo/15.0;
+          description = "A template for Odoo 15.0";
+        };
+      };
     }
     // mapHosts
     # for convenience
