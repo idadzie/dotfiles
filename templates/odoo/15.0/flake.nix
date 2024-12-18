@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31";
     systems.url = "github:nix-systems/default";
     flake-utils = {
       url = "github:numtide/flake-utils";
@@ -19,46 +19,23 @@
           inherit system;
           config.allowUnfree = true;
         };
-        inherit (pkgs) lib;
-        pythonldlibpath = lib.makeLibraryPath (with pkgs; [
-          acl
-          attr
-          bzip2
-          curl
-          cyrus_sasl
-          gsasl
-          libsass
-          libsodium
-          libssh
-          libxml2
-          openldap
-          openssl
-          stdenv.cc.cc
-          systemd
-          util-linux
-          xz
-          zlib
-          zstd
-        ]);
-        # Darwin requires a different library path prefix
-        wrapPrefix =
-          if (!pkgs.stdenv.isDarwin)
-          then "LD_LIBRARY_PATH"
-          else "DYLD_LIBRARY_PATH";
-        patchedpython = pkgs.symlinkJoin {
-          name = "python";
-          paths = [pkgs.python39];
-          buildInputs = [pkgs.makeWrapper];
-          postBuild = ''
-            wrapProgram "$out/bin/python3.9" --prefix ${wrapPrefix} : "${pythonldlibpath}"
-          '';
-        };
+        inherit (pkgs) stdenv;
       in {
         devShells.default = pkgs.mkShell {
-          buildInputs = [
-            patchedpython
+          buildInputs = with pkgs; [
+            cyrus_sasl.dev
+            gsasl
+            libsass
+            openldap
+            postgresql_14 # without this psycopg2 from the requirments txt does not build. ;(
+
+            python39Packages.setuptools
+            python39Packages.wheel
+
+            stdenv.cc.cc.lib
           ];
         };
       }
     );
 }
+
