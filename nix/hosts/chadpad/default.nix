@@ -230,10 +230,18 @@
 
     # direnv
     direnv.enable = true;
-
-    # nix-ld
-    nix-ld.enable = true;
   };
+
+  # nix-ld
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    cyrus_sasl.dev
+    gsasl
+    libsass
+    openldap
+    stdenv.cc.cc.lib
+    zlib
+  ];
 
   virtualisation.docker.enable = true;
 
