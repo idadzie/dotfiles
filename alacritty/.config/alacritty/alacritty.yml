@@ -117,7 +117,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: UbuntuMono Nerd Font
+    family: JetBrainsMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
     # style: Regular
@@ -128,7 +128,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Ubuntu Mono Nerd Font
+    family: JetBrainsMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
     # style: Bold
@@ -139,7 +139,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Ubuntu Mono Nerd Font
+    family: JetBrainsMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
@@ -181,12 +181,12 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Ubuntu-ish by moi 😉)
+# Colors (Tokyonight - night)
 colors:
   # Default colors
   primary:
-    background: '#282828'
-    foreground: '#eeeeec'
+    background: '#1a1b26'
+    foreground: '#c0caf5'
 
 
     # Bright and dim foreground colors
@@ -275,25 +275,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#2e3436'
-    red:     '#cc0000'
-    green:   '#4e9a06'
-    yellow:  '#c4a000'
-    blue:    '#3465a4'
-    magenta: '#75507b'
-    cyan:    '#06989a'
-    white:   '#d3d7cf'
+    black: '#15161e'
+    red: '#f7768e'
+    green: '#9ece6a'
+    yellow: '#e0af68'
+    blue: '#7aa2f7'
+    magenta: '#bb9af7'
+    cyan: '#7dcfff'
+    white: '#a9b1d6'
 
   # Bright colors
   bright:
-    black:   '#555753'
-    red:     '#ef2929'
-    green:   '#8ae234'
-    yellow:  '#fce94f'
-    blue:    '#729fcf'
-    magenta: '#ad7fa8'
-    cyan:    '#34e2e2'
-    white:   '#eeeeec'
+    black: '#414868'
+    red: '#ff899d'
+    green: '#9fe044'
+    yellow: '#faba4a'
+    blue: '#8db0ff'
+    magenta: '#c7a9ff'
+    cyan: '#a4daff'
+    white: '#c0caf5'
 
   # Dim colors
   #
@@ -317,7 +317,9 @@ colors:
   # Example:
   #   `- { index: 16, color: '#ff00ff' }`
   #
-  #indexed_colors: []
+  indexed_colors:
+    - { index: 16, color: '#ff00ff' }
+    - { index: 17, color: '#db4b4b' }
 
   # Transparent cell backgrounds
   #
