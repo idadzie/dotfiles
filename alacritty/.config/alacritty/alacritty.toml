@@ -1,0 +1,95 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "N"
+mods = "Control"
+
+[general]
+live_config_reload = true
+
+[[colors.indexed_colors]]
+color = "#ff00ff"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#db4b4b"
+index = 17
+
+[colors.bright]
+black = "#414868"
+blue = "#8db0ff"
+cyan = "#a4daff"
+green = "#9fe044"
+magenta = "#c7a9ff"
+red = "#ff899d"
+white = "#c0caf5"
+yellow = "#faba4a"
+
+[colors.normal]
+black = "#15161e"
+blue = "#7aa2f7"
+cyan = "#7dcfff"
+green = "#9ece6a"
+magenta = "#bb9af7"
+red = "#f7768e"
+white = "#a9b1d6"
+yellow = "#e0af68"
+
+[colors.primary]
+background = "#1a1b26"
+foreground = "#c0caf5"
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[font]
+size = 16.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[[hints.enabled]]
+command = "xdg-open"
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.binding]
+key = "U"
+mods = "Control|Shift"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "None"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "none"
+
+[window.dimensions]
+columns = 150
+lines = 40
+
+[window.padding]
+x = 15
+y = 15
+
+[window.position]
+x = 120
+y = 85
+
+[keyboard]
