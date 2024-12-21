@@ -62,6 +62,11 @@ zi for \
   junegunn/fzf
 
 zi for \
+    from'gh-r' \
+    sbin'**/rg -> rg' \
+  BurntSushi/ripgrep
+
+zi for \
     as"program" \
     atclone'./direnv hook zsh > zhook.zsh' \
     from"gh-r" \
