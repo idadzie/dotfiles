@@ -191,7 +191,7 @@
     clang-manpages
     clang-tools
 
-    # Programming (Rust)
+    # Programming (Ruby)
     ruby_3_3
 
     # Programming (Rust)
