@@ -162,6 +162,7 @@
     lsof
     meld
     mosh
+    nix-index
     pdfgrep
     rclone
     rsync
@@ -241,6 +242,7 @@
     openldap
     stdenv.cc.cc.lib
     zlib
+    libpqxx
   ];
 
   virtualisation.docker.enable = true;
