@@ -142,6 +142,12 @@
     configDir = "/home/${config.my.username}/.config/syncthing";
   };
 
+  # iPhone
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
+
   # Environment variables
   environment.sessionVariables = rec {
     # Not officially in the XDG specification
@@ -159,7 +165,9 @@
     feh
     ffmpeg-full
     git
+    ifuse
     killall
+    libimobiledevice
     lshw
     lsof
     meld
