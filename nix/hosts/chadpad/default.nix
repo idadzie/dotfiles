@@ -154,6 +154,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    dosfstools
+    exfatprogs
     feh
     ffmpeg-full
     git
@@ -163,6 +165,7 @@
     meld
     mosh
     nix-index
+    ntfsprogs
     pdfgrep
     rclone
     rsync
