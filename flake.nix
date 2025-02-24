@@ -30,7 +30,6 @@
       url = "github:zhaofengli-wip/nix-homebrew";
       inputs = {
         nix-darwin.follows = "darwin";
-        flake-utils.follows = "flake-utils";
         nixpkgs.follows = "nixpkgs";
       };
     };
@@ -149,7 +148,7 @@
       nixpkgs = {
         config = {allowUnfree = true;};
         overlays = [
-          inputs.nur.overlay
+          inputs.nur.overlays.default
           # fix for swift 8
           # https://github.com/NixOS/nixpkgs/issues/327836#issuecomment-2292084100
           (final: prev: let
