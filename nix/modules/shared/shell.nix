@@ -74,7 +74,6 @@ in {
               cachix
               curl
               direnv
-              diskonaut
               eza
               fzf
               # grc

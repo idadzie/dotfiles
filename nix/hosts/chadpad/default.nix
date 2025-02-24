@@ -197,7 +197,6 @@
     gnumake
     scons
     cmake
-    gcc8
     clang
     clang-analyzer
     clang-manpages
