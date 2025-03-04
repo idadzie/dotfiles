@@ -44,37 +44,37 @@ fi
 export FZF_DEFAULT_COMMAND="${__FZF[DEFAULT]}"
 export FZF_CTRL_T_COMMAND="${__FZF[CMD]}"
 export FZF_ALT_C_COMMAND="${__FZF[ALT_C]}"
-export FZF_DEFAULT_OPTS="\
-  --prompt='» '
-  --pointer='▶'
-  --marker='✓ '
-  --min-height 30 \
-  --height 50% \
-  --reverse \
-  --tabstop 2 \
-  --multi \
-  --exit-0 \
-  --highlight-line \
-  --info=inline-right \
-  --ansi \
-  --layout=reverse \
-  --border=none
-  --color=bg+:#283457 \
-  --color=bg:#16161e \
-  --color=border:#27a1b9 \
-  --color=fg:#c0caf5 \
-  --color=gutter:#16161e \
-  --color=header:#ff9e64 \
-  --color=hl+:#2ac3de \
-  --color=hl:#2ac3de \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#2ac3de \
-  --color=query:#c0caf5:regular \
-  --color=scrollbar:#27a1b9 \
-  --color=separator:#ff9e64 \
-  --color=spinner:#ff007c \
+export FZF_DEFAULT_OPTS="
+--prompt='» '
+--pointer='▶'
+--marker='✓ '
+--min-height 30
+--height 50%
+--reverse
+--tabstop 2
+--multi
+--exit-0
+--highlight-line
+--info=inline-right
+--ansi
+--layout=reverse
+--border=none
+--color=bg+:#283457
+--color=bg:#16161e
+--color=border:#27a1b9
+--color=fg:#c0caf5
+--color=gutter:#16161e
+--color=header:#ff9e64
+--color=hl+:#2ac3de
+--color=hl:#2ac3de
+--color=info:#545c7e
+--color=marker:#ff007c
+--color=pointer:#ff007c
+--color=prompt:#2ac3de
+--color=query:#c0caf5:regular
+--color=scrollbar:#27a1b9
+--color=separator:#ff9e64
+--color=spinner:#ff007c
 "
 
 export FZF_CTRL_T_OPTS='
