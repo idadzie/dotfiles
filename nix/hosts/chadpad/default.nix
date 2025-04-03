@@ -185,6 +185,7 @@
     nix-index
     ntfsprogs
     pdfgrep
+    pciutils
     rclone
     rsync
     stow
