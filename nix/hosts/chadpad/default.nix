@@ -95,7 +95,7 @@
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.powerManagement.enable = true;
   hardware.nvidia.powerManagement.finegrained = true;
-  hardware.nvidia.open = true;
+  hardware.nvidia.open = false;
   hardware.nvidia.nvidiaSettings = true;
   hardware.nvidia.prime = {
     offload = {
