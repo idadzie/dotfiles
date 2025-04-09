@@ -194,6 +194,9 @@
     xclip
     xdotool
 
+    # Gnome extensions
+    gnomeExtensions.caffeine
+
     # Compression tools
     zip
     gzip
