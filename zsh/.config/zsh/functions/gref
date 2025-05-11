@@ -1,0 +1,7 @@
+if (( ! $+commands[fzf] )); then
+  return 1
+fi
+
+git reflog | \
+  fzf --no-sort --reverse \
+      --preview="echo {} | awk '{print \$1}' | xargs git show --color=always"
