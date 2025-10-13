@@ -1,2 +1,4 @@
 [general]
 color_scheme = tokyonight
+brackets_completion = True
+
